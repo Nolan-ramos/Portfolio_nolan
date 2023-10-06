@@ -3,7 +3,7 @@
     z-index: 999;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    box-shadow: #00FF00 0px 0px 15px 2px, inset 0 0 10px 1px #00FF00;
-    border: 3px solid #00FF00;
+    box-shadow: var(--primary-color) 0px 0px 15px 2px, inset 0 0 10px 1px var(--primary-color);
+    border: 3px solid var(--primary-color);
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s;
 }

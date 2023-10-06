@@ -10,7 +10,8 @@
             padding:15px 65px;
         }
         .active{
-            border-top-color:#00FF00;
+            border-top-color:var(--primary-color);
+            ;
             background: #011627;
         }
     }

@@ -47,10 +47,10 @@ function Title(props) {
 
     return (
         <h1>
-            <span>{"{-- "}</span>
+            <span>{"{--"}</span>
             {animatedTitle}
             <p>|</p>
-            <span>{" --}"}</span>
+            <span>{"--}"}</span>
         </h1>
     )
 }

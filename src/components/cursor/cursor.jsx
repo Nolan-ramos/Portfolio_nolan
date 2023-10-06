@@ -4,7 +4,7 @@ import './cursor.scss';
 function Cursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [cursorSize, setCursorSize] = useState({ width: '10px', height: '10px' });
-    const [cursorBackgroundColor, setCursorBackgroundColor] = useState('#00FF00');
+    const [cursorBackgroundColor, setCursorBackgroundColor] = useState('');
 
     const updateMousePosition = (e) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
@@ -21,7 +21,7 @@ function Cursor() {
 
     const handleMouseLeaveLink = () => {
         setCursorSize({ width: '10px', height: '10px' });
-        setCursorBackgroundColor('#00FF00');
+        setCursorBackgroundColor(getComputedStyle(document.documentElement).getPropertyValue('--primary-color'));
     };
 
     useEffect(() => {
@@ -45,6 +45,10 @@ function Cursor() {
                 link.removeEventListener('mouseleave', handleMouseLeaveLink);
             });
         };
+    }, []);
+
+    useEffect(() => {
+        setCursorBackgroundColor(getComputedStyle(document.documentElement).getPropertyValue('--primary-color'));
     }, []);
 
     return (
