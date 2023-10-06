@@ -1,10 +1,11 @@
-
+import Title from '../../components/title/Title';
+import './contact.scss';
 
 function Contact() {
     return (
-        <>
-            <h1>Contact</h1>
-        </>
+        <div className='contact'>
+            <Title title="Contact" />
+        </div>
     )
 }
 

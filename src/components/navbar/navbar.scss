@@ -1,0 +1,17 @@
+.navbar{
+    background: #001321;
+    ul{
+        display: flex;
+    }
+    &_link{
+        a{
+            border-top: solid 1.5px transparent;
+            display: block;
+            padding:15px 65px;
+        }
+        .active{
+            border-top-color:#00FF00;
+            background: #011627;
+        }
+    }
+}

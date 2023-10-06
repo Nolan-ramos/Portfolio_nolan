@@ -1,8 +1,11 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.scss';
+import Background from './components/background/Background';
 import Cursor from './components/cursor/Cursor';
+import Header from './components/header/Header';
 import Navbar from './components/navbar/Navbar';
+
 import routes from './routes';
 
 function App() {
@@ -10,14 +13,18 @@ function App() {
     <>
       <div className="App">
         <Router>
+          <Header />
           <Navbar />
-          <Routes>
-            {routes.map((route, index) => (
-              <Route key={index} path={route.path} element={<route.component />} />
-            ))}
-          </Routes>
+          <div className='main'>
+            <Routes>
+              {routes.map((route, index) => (
+                <Route key={index} path={route.path} element={<route.component />} />
+              ))}
+            </Routes>
+          </div>
         </Router>
       </div>
+      <Background />
       <Cursor />
     </>
   );

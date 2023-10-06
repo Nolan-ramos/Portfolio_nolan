@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './cursor.scss';
 
 function Cursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -50,17 +51,11 @@ function Cursor() {
         <div
             className="cursor"
             style={{
-                position: 'fixed',
                 width: cursorSize.width,
                 height: cursorSize.height,
                 backgroundColor: cursorBackgroundColor,
                 top: mousePosition.y + 'px',
                 left: mousePosition.x + 'px',
-                transform: 'translate(-50%, -50%)', // Pour centrer le curseur par rapport à la souris
-                pointerEvents: 'none',
-                boxShadow: '0 0 10px #00FF00, inset 0 0 10px #00FF00',
-                border: '3px solid #00FF00',
-                transition: 'width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s',
             }}
         ></div>
     );

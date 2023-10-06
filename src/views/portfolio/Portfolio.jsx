@@ -1,9 +1,10 @@
-import React from 'react';
+import Title from '../../components/title/Title';
+import './portfolio.scss';
 
 function Portfolio() {
     return (
-        <div>
-            <h1>Portfolio</h1>
+        <div className='portfolio'>
+            <Title title="Portfolio" />
         </div>
     )
 }

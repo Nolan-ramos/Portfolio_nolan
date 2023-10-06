@@ -1,10 +1,11 @@
-
+import Title from '../../components/title/Title';
+import './experience.scss';
 
 function Experience() {
     return (
-        <>
-            <h1>Experience</h1>
-        </>
+        <div className='experience'>
+            <Title title="Experience" />
+        </div>
     )
 }
 

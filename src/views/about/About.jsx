@@ -1,10 +1,11 @@
-import React from 'react';
+import Title from '../../components/title/Title';
+import './about.scss';
 
 function About() {
     return (
-        <>
-            <h1>About</h1>
-        </>
+        <div className='about'>
+            <Title title="About" />
+        </div>
     )
 }
 
