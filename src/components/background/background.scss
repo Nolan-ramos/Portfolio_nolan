@@ -23,6 +23,8 @@
         backdrop-filter: blur(80px);
     }
     &_shapes{
+        height:100%;
+        width: 100%;
         .shape{
             z-index: 2;
             width: 500px;
@@ -36,14 +38,14 @@
             &:nth-child(1){
                 top: 50%;
                 right: 170px;
-                background-color: #4D5BCE;
+                background-color: #43D9AD;
                 animation-name: shape_animation_1;
                 transform: translateY(-50%) rotate(326deg);
             }
             &:nth-child(2){
                 top: 60%;
                 right: 150px;
-                background-color: #43D9AD;
+                background-color: #4D5BCE;
                 animation-name: shape_animation_2;
                 transform: translateY(-50%) rotate(30deg);
             }

@@ -3,16 +3,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:12.5px 20px;
+    padding:10px 20px;
     background: #001321;
     &_fake_button{
         &_left{
+            display: flex;
+            &:hover{
+                span img{
+                    opacity:0.7;
+                }
+            }
             span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width:11px;
                 height:11px;
                 border-radius: 50px;
-                display: inline-block;
                 margin-right: 10px;
+                img{
+                    width:9px;
+                    height:9px;
+                    object-fit: cover;
+                    opacity:0;
+                }
                 &:nth-child(1){
                     background: red;
                 }
@@ -22,8 +36,12 @@
                 &:nth-child(3){
                     background: green;
                     margin-right: 0;
+                    img{
+                        transform: rotate(-45deg);
+                    }
                 }
             }
+
         }
     }
     &_title{
