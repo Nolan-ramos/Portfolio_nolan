@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './cursor.scss';
 
 function Cursor() {
@@ -10,9 +10,9 @@ function Cursor() {
         setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    const isCursorOverLink = (e) => {
-        return e.target.tagName === 'A';
-    };
+    // const isCursorOverLink = (e) => {
+    //     return e.target.tagName === 'A';
+    // };
 
     const handleMouseEnterLink = () => {
         setCursorSize({ width: '20px', height: '20px' });

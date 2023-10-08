@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes
 import './title.scss';
 
 function Title(props) {
@@ -48,5 +49,9 @@ function Title(props) {
         </h1>
     );
 }
+
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Title;
