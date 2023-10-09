@@ -6,4 +6,10 @@
     box-shadow: var(--primary-color) 0px 0px 15px 2px, inset 0 0 10px 1px var(--primary-color);
     border: 3px solid var(--primary-color);
     transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s;
+    @media screen and (max-width: 767px) {
+        display: none;
+        z-index: -999;
+    }
 }
+
+
