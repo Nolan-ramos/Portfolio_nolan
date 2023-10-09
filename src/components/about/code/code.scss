@@ -2,11 +2,17 @@
     margin:100px 0;
     padding:50px 0;
     background-color: rgb(1 30 53 / 55%);
+    @media screen and (max-width: 767px) {
+        padding:24px 0;
+    }
     &_line{
         display: flex;
         align-items: center;
         margin-bottom: 12px;
         padding: 8px 0 8px 200px;
+        @media screen and (max-width: 767px) {
+            padding:4px 24px 4px 24px;
+        }
         &:hover{
             background-color: rgb(255 255 255 / 5%);
         }
@@ -26,9 +32,13 @@
             font-size: 24px;
             opacity: 0.3;
             transition: 1s ease-in-out;
+            width: 100%;
             &:hover{
                 opacity: 1;
                 transition: 0s ease-in-out;
+            }
+            @media screen and (max-width: 767px) {
+                font-size: 16px;
             }
         }
     }

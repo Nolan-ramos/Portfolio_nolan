@@ -41,6 +41,9 @@
                 background-color: #43D9AD;
                 animation-name: shape_animation_1;
                 transform: translateY(-50%) rotate(326deg);
+                @media screen and (max-width: 767px) {
+                    right: -170px;
+                }
             }
             &:nth-child(2){
                 top: 60%;
@@ -48,6 +51,9 @@
                 background-color: #4D5BCE;
                 animation-name: shape_animation_2;
                 transform: translateY(-50%) rotate(30deg);
+                @media screen and (max-width: 767px) {
+                    right: -150px;
+                }
             }
         }
     }

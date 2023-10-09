@@ -2,6 +2,7 @@
     background: #001321;
     ul{
         display: flex;
+        overflow: scroll;
     }
     &_link{
         a{
