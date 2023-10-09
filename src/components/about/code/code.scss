@@ -1,17 +1,24 @@
 .code{
     margin:100px 0;
-    padding:50px 0;
+    padding:48px 0;
     background-color: rgb(1 30 53 / 55%);
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1023px) {
         padding:24px 0;
     }
     &_line{
         display: flex;
         align-items: center;
         margin-bottom: 12px;
-        padding: 8px 0 8px 200px;
+        padding: 8px 200px;
+        height:100%;
+        @media screen and (max-width: 1023px) {
+            padding:8px 96px;
+        }
         @media screen and (max-width: 767px) {
-            padding:4px 24px 4px 24px;
+            padding:8px 24px;
+        }
+        @media screen and (max-width: 300px) {
+            padding:8px 12px;
         }
         &:hover{
             background-color: rgb(255 255 255 / 5%);
@@ -27,6 +34,15 @@
             opacity: 0.5;
             font-family: 'Press Start 2P';
             font-size:12px;
+            @media screen and (max-width: 1023px) {
+                font-size: 10px;
+            }
+            @media screen and (max-width: 767px) {
+                font-size: 8px;
+            }
+            @media screen and (max-width: 320px) {
+                font-size: 6px;
+            }
         }
         &_txt{
             font-size: 24px;
@@ -37,8 +53,14 @@
                 opacity: 1;
                 transition: 0s ease-in-out;
             }
+            @media screen and (max-width: 1023px) {
+                font-size: 20px;
+            }
             @media screen and (max-width: 767px) {
                 font-size: 16px;
+            }
+            @media screen and (max-width: 320px) {
+                font-size: 12px;
             }
         }
     }
