@@ -3,6 +3,9 @@
     ul{
         display: flex;
         overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     &_link{
         a{

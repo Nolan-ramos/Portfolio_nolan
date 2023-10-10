@@ -6,16 +6,16 @@ function Navbar() {
         <nav className='navbar'>
             <ul>
                 <li className='navbar_link'>
-                    <NavLink exact to="/" activeClassName='active'>_About</NavLink>
+                    <NavLink exact to="/" activeclassname='active'>_About</NavLink>
                 </li>
                 <li className='navbar_link'>
-                    <NavLink to="/portfolio" activeClassName='active'>_Portfolio</NavLink>
+                    <NavLink to="/portfolio" activeclassname='active'>_Portfolio</NavLink>
                 </li>
                 <li className='navbar_link'>
-                    <NavLink to="/experience" activeClassName='active'>_Experience</NavLink>
+                    <NavLink to="/experience" activeclassname='active'>_Experience</NavLink>
                 </li>
                 <li className='navbar_link'>
-                    <NavLink to="/contact" activeClassName='active'>_Contact</NavLink>
+                    <NavLink to="/contact" activeclassname='active'>_Contact</NavLink>
                 </li>
             </ul>
         </nav>

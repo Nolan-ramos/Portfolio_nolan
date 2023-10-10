@@ -5,6 +5,9 @@ function Experience() {
     return (
         <div className='experience'>
             <Title title="Experience" />
+            <div className="accordeon">
+                
+            </div>
         </div>
     )
 }
