@@ -4,7 +4,7 @@ import './about.scss';
 
 function About() {
     return (
-        <div className='about'>
+        <div className='about fade-in'>
             <Title title="About" />
             <Code/>
             <Title title="My expertise" />

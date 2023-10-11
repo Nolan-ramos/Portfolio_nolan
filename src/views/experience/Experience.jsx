@@ -1,26 +1,35 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MacButtons from '../../components/mac_buttons/mac_buttons';
 import Title from '../../components/title/Title';
 import './experience.scss';
 import experienceData from './experienceData.json';
 
 function Experience() {
-    const [openCategories, setOpenCategories] = useState({});
-    const [activeSubcategory, setActiveSubcategory] = useState(null); // État pour stocker la sous-catégorie active
+    const [activeSubcategory, setActiveSubcategory] = useState(null);
+    const [activeSubcategoryIndices, setActiveSubcategoryIndices] = useState(new Array(experienceData.length).fill(null));
 
-    const toggleCategory = (category) => {
-        setOpenCategories((prevState) => ({
-            ...prevState,
-            [category]: !prevState[category],
-        }));
-    };
+    const handleSubcategoryClick = (categoryIndex, subcategoryIndex, subcategoryData) => {
+        setActiveSubcategoryIndices((prevIndices) => {
+            const newIndices = [...prevIndices];
+            newIndices[categoryIndex] = subcategoryIndex;
+            return newIndices;
+        });
 
-    const toggleSubcategory = (subcategory) => {
-        setActiveSubcategory(subcategory === activeSubcategory ? null : subcategory);
+        setActiveSubcategory(null);
+
+        setActiveSubcategoryIndices((prevIndices) => {
+            const newIndices = [...prevIndices];
+            newIndices[categoryIndex] = null;
+            return newIndices;
+        });
+
+        setTimeout(() => {
+            setActiveSubcategory(subcategoryData);
+        }, 10);
     };
 
     return (
-        <div className='experience'>
+        <div className='experience fade-in'>
             <Title title="Experience" />
             <div className='experience_container'>
                 <div className='experience_header'>
@@ -29,34 +38,30 @@ function Experience() {
                 </div>
                 <div className='experience_content'>
                     <div className='experience_content_accordeon'>
-                    {experienceData.map((categoryData, index) => (
-                        <div key={index} className={categoryData.category}>
-                            <button onClick={() => toggleCategory(categoryData.category)}>
-                                {categoryData.category}
-                            </button>
-                            {openCategories[categoryData.category] && (
+                        {experienceData.map((categoryData, categoryIndex) => (
+                            <div key={categoryIndex} className={categoryData.category}>
+                                <button className='experience_content_accordeon_title_category'>{categoryData.category}</button>
                                 <div>
-                                    {categoryData.subcategories.map((subcategoryData, subIndex) => (
-                                        <div
-                                            key={subIndex}
-                                            className={subcategoryData.title}
-                                            onClick={() => toggleSubcategory(subcategoryData)}
-                                        >
-                                            <button>{subcategoryData.title}</button>
+                                    {categoryData.subcategories.map((subcategoryData, subcategoryIndex) => (
+                                        <div key={subcategoryIndex} className={subcategoryData.title}>
+                                            <button
+                                                onClick={() => handleSubcategoryClick(categoryIndex, subcategoryIndex, subcategoryData)}
+                                                className={`experience_content_accordeon_title_subcategory ${activeSubcategoryIndices[categoryIndex] === subcategoryIndex ? 'active' : ''}`}
+                                            >
+                                                {subcategoryData.title}
+                                            </button>
                                         </div>
                                     ))}
                                 </div>
-                            )}
-                        </div>
-                    ))}
+                            </div>
+                        ))}
                     </div>
                     <div className="experience_content_contenu">
                         {activeSubcategory && (
-                            <div>
+                            <div className="fade-in">
                                 <h3>{activeSubcategory.title}</h3>
                                 {activeSubcategory.contents.map((content, contentIndex) => (
                                     <div key={contentIndex}>
-                                        <h4>{content.title}</h4>
                                         {content.text && <p>{content.text}</p>}
                                         {content.words && (
                                             <ul>

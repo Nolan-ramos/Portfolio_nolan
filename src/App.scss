@@ -441,3 +441,15 @@ body{
 .main{
   padding:100px 0px;
 }
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.fade-in{
+  animation: fadeIn 0.5s ease-in-out;
+}

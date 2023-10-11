@@ -3,7 +3,7 @@ import './contact.scss';
 
 function Contact() {
     return (
-        <div className='contact'>
+        <div className='contact fade-in'>
             <Title title="Contact" />
         </div>
     )

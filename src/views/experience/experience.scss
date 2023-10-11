@@ -3,7 +3,7 @@
         display: flex;
         flex-direction: column;
         margin: 100px 200px;
-        height:600px;
+        height:800px;
         backdrop-filter: blur(40px);
     }
     &_header{
@@ -27,17 +27,30 @@
             width: calc(100% / 4);
             background-color: rgba(12, 60, 66, 0.5);
             border-bottom-left-radius: 12px;
-            padding:48px;
-            button{
+            padding:24px;
+            font-size: 20px;
+            &_title{
                 display: inline-block;
-                font-weight: 200;
-                opacity:0.5;
+                font-size: 20px;
+                &_category{
+                    font-weight: 300;
+                    
+                }
+                &_subcategory{
+                    font-weight: 200;
+                    opacity: 0.7;
+                }
+            }
+            .active{
+                color:var(--primary-color);
+                text-shadow: var(--primary-color) 0px 0px 5px;
             }
         }
         &_contenu{
             width: calc(100% / 4 * 3);
-            background-color: rgba(41, 122, 121, 0.4);
+            background-color: rgba(95, 255, 250, 0.2);
             border-bottom-right-radius: 12px;
+            padding:24px;
         }
     }
 }
