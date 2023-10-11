@@ -10,16 +10,24 @@ function Cursor() {
         setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    // const isCursorOverLink = (e) => {
-    //     return e.target.tagName === 'A';
-    // };
-
     const handleMouseEnterLink = () => {
         setCursorSize({ width: '20px', height: '20px' });
         setCursorBackgroundColor('rgba(0, 0, 0, 0)');
     };
 
     const handleMouseLeaveLink = () => {
+        setCursorSize({ width: '10px', height: '10px' });
+        setCursorBackgroundColor(getComputedStyle(document.documentElement).getPropertyValue('--primary-color'));
+    };
+
+    const handleMouseEnterChangeCursor = () => {
+        // Mettez à jour les propriétés du curseur lorsque vous survolez un élément avec la classe "change_cursor"
+        setCursorSize({ width: '20px', height: '20px' });
+        setCursorBackgroundColor('rgba(0, 0, 0, 0)'); // Modifiez la couleur de fond comme vous le souhaitez
+    };
+
+    const handleMouseLeaveChangeCursor = () => {
+        // Rétablissez les propriétés du curseur lorsque vous quittez un élément avec la classe "change_cursor"
         setCursorSize({ width: '10px', height: '10px' });
         setCursorBackgroundColor(getComputedStyle(document.documentElement).getPropertyValue('--primary-color'));
     };
@@ -39,10 +47,21 @@ function Cursor() {
             link.addEventListener('mouseleave', handleMouseLeaveLink);
         });
 
+        const changeCursorElements = document.querySelectorAll('.change_cursor');
+        changeCursorElements.forEach((element) => {
+            element.addEventListener('mouseenter', handleMouseEnterChangeCursor);
+            element.addEventListener('mouseleave', handleMouseLeaveChangeCursor);
+        });
+
         return () => {
             links.forEach((link) => {
                 link.removeEventListener('mouseenter', handleMouseEnterLink);
                 link.removeEventListener('mouseleave', handleMouseLeaveLink);
+            });
+
+            changeCursorElements.forEach((element) => {
+                element.removeEventListener('mouseenter', handleMouseEnterChangeCursor);
+                element.removeEventListener('mouseleave', handleMouseLeaveChangeCursor);
             });
         };
     }, []);

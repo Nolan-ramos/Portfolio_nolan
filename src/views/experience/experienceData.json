@@ -1,0 +1,88 @@
+[
+    {
+        "category": "Experiences",
+        "subcategories": [
+            {
+                "title": "NATURE SAS",
+                "contents": [
+                    {
+                        "title": "Administrateur réseaux",
+                        "text": "NATURE SAS • Combs-La-Ville • Stage • 11/2018 - 01/2019 "
+                    }
+                ]
+            },
+            {
+                "title": "J Diffusion",
+                "contents": [
+                    {
+                        "title": "Technicien de maintenance informatique",
+                        "text": "J Diffusion • Moissy-Cramayel • Stage • 02/2018 - 04/2018"
+                    }
+                ]
+            },
+            {
+                "title": "SERVICINFO",
+                "contents": [
+                    {
+                        "title": "Technicien de maintenance informatique",
+                        "text": "SERVICINFO • Brie-Comte-Robert • Stage • 05/2017 - 06/2017"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Jobs",
+        "subcategories": [
+            {
+                "title": "Bachelor",
+                "contents": [
+                    {
+                        "title": "Bachelor développeur web",
+                        "text": "Hetic école informatique • Montreuil • 2021 - 2024"
+                    }
+                ]
+            },
+            {
+                "title": "BTS",
+                "contents": [
+                    {
+                        "title": "BTS systèmes informatiques aux organisations",
+                        "text": "Lycée du Parc des Loges • Évry-Courcouronnes • 2020 - 2021"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Skills",
+        "subcategories": [
+            {
+                "title": "Compétences",
+                "contents": [
+                    {
+                        "title": "Framework",
+                        "words": ["React.js", "Vue.js"]
+                    },
+                    {
+                        "title": "Web",
+                        "words": ["HTML", "CSS", "JavaScript"]
+                    }
+                ]
+            },
+            {
+                "title": "Languages",
+                "contents": [
+                    {
+                        "title": "Français",
+                        "number": 4
+                    },
+                    {
+                        "title": "Anglais",
+                        "number": 3
+                    }
+                ]
+            }
+        ]
+    }
+]
