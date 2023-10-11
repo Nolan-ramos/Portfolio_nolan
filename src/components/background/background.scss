@@ -41,6 +41,7 @@
                 background-color: #43D9AD;
                 animation-name: shape_animation_1;
                 transform: translateY(-50%) rotate(326deg);
+                transform-origin: center center;
                 @media screen and (max-width: 767px) {
                     right: -170px;
                 }
@@ -51,6 +52,7 @@
                 background-color: #4D5BCE;
                 animation-name: shape_animation_2;
                 transform: translateY(-50%) rotate(30deg);
+                transform-origin: center center;
                 @media screen and (max-width: 767px) {
                     right: -150px;
                 }
@@ -59,19 +61,19 @@
     }
     @keyframes shape_animation_1 {
         0% {
-            transform: translateY(-50%) rotate(686deg);
+            transform: translateY(-50%) rotate(326deg);
         }
         100% {
-            transform: translateY(-50%) rotate(326deg);
+            transform: translateY(-50%) rotate(686deg);
         }
     }
     
     @keyframes shape_animation_2 {
         0% {
-            transform: translateY(-50%) rotate(30deg);
+            transform: translateY(-50%) rotate(390deg);
         }
         100% {
-            transform: translateY(-50%) rotate(390deg);
+            transform: translateY(-50%) rotate(30deg);
         }
     }    
 }

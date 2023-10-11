@@ -4,7 +4,7 @@
         flex-direction: column;
         margin: 100px 200px;
         height:600px;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(40px);
     }
     &_header{
         display: flex;
@@ -25,9 +25,14 @@
         height:100%;
         &_accordeon{
             width: calc(100% / 4);
-            background-color: rgba(12, 60, 66, 0.4);
+            background-color: rgba(12, 60, 66, 0.5);
             border-bottom-left-radius: 12px;
             padding:48px;
+            button{
+                display: inline-block;
+                font-weight: 200;
+                opacity:0.5;
+            }
         }
         &_contenu{
             width: calc(100% / 4 * 3);

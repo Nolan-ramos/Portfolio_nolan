@@ -31,9 +31,9 @@ function Experience() {
                     <div className='experience_content_accordeon'>
                     {experienceData.map((categoryData, index) => (
                         <div key={index} className={categoryData.category}>
-                            <h2 className='change_cursor' onClick={() => toggleCategory(categoryData.category)}>
+                            <button onClick={() => toggleCategory(categoryData.category)}>
                                 {categoryData.category}
-                            </h2>
+                            </button>
                             {openCategories[categoryData.category] && (
                                 <div>
                                     {categoryData.subcategories.map((subcategoryData, subIndex) => (
@@ -42,7 +42,7 @@ function Experience() {
                                             className={subcategoryData.title}
                                             onClick={() => toggleSubcategory(subcategoryData)}
                                         >
-                                            <h3>{subcategoryData.title}</h3>
+                                            <button>{subcategoryData.title}</button>
                                         </div>
                                     ))}
                                 </div>

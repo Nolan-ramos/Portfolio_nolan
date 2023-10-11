@@ -236,6 +236,10 @@ legend {
 * 3. Improve appearance and consistency in all browsers.
 */
 
+button{
+  color:#fff;
+}
+
 button,
 input,
 select,
@@ -283,7 +287,7 @@ html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
+  /* cursor: pointer; */ /* 3 */
   overflow: visible;  /* 4 */
 }
 
@@ -368,7 +372,8 @@ button,
 input,
 select,
 textarea {
-  color: #222;
+  background: transparent;
+  /* color: #222; */
   outline: 0;
   border:0;
 }

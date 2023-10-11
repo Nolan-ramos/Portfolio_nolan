@@ -3,28 +3,28 @@
         "category": "Experiences",
         "subcategories": [
             {
-                "title": "NATURE SAS",
+                "title": "Administrateur.txt",
                 "contents": [
                     {
-                        "title": "Administrateur réseaux",
+                        "title": "NATURE SAS",
                         "text": "NATURE SAS • Combs-La-Ville • Stage • 11/2018 - 01/2019 "
                     }
                 ]
             },
             {
-                "title": "J Diffusion",
+                "title": "Technicien.txt",
                 "contents": [
                     {
-                        "title": "Technicien de maintenance informatique",
+                        "title": "J Diffusion",
                         "text": "J Diffusion • Moissy-Cramayel • Stage • 02/2018 - 04/2018"
                     }
                 ]
             },
             {
-                "title": "SERVICINFO",
+                "title": "Technicien.txt",
                 "contents": [
                     {
-                        "title": "Technicien de maintenance informatique",
+                        "title": "SERVICINFO",
                         "text": "SERVICINFO • Brie-Comte-Robert • Stage • 05/2017 - 06/2017"
                     }
                 ]
@@ -35,7 +35,7 @@
         "category": "Jobs",
         "subcategories": [
             {
-                "title": "Bachelor",
+                "title": "Bachelor.txt",
                 "contents": [
                     {
                         "title": "Bachelor développeur web",
@@ -44,7 +44,7 @@
                 ]
             },
             {
-                "title": "BTS",
+                "title": "BTS.txt",
                 "contents": [
                     {
                         "title": "BTS systèmes informatiques aux organisations",
@@ -58,7 +58,7 @@
         "category": "Skills",
         "subcategories": [
             {
-                "title": "Compétences",
+                "title": "Compétences.txt",
                 "contents": [
                     {
                         "title": "Framework",
@@ -71,7 +71,7 @@
                 ]
             },
             {
-                "title": "Languages",
+                "title": "Languages.txt",
                 "contents": [
                     {
                         "title": "Français",

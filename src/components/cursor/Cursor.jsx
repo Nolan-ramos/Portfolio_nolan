@@ -20,14 +20,12 @@ function Cursor() {
         setCursorBackgroundColor(getComputedStyle(document.documentElement).getPropertyValue('--primary-color'));
     };
 
-    const handleMouseEnterChangeCursor = () => {
-        // Mettez à jour les propriétés du curseur lorsque vous survolez un élément avec la classe "change_cursor"
+    const handleMouseEnterButton = () => {
         setCursorSize({ width: '20px', height: '20px' });
-        setCursorBackgroundColor('rgba(0, 0, 0, 0)'); // Modifiez la couleur de fond comme vous le souhaitez
+        setCursorBackgroundColor('rgba(0, 0, 0, 0)');
     };
 
-    const handleMouseLeaveChangeCursor = () => {
-        // Rétablissez les propriétés du curseur lorsque vous quittez un élément avec la classe "change_cursor"
+    const handleMouseLeaveButton = () => {
         setCursorSize({ width: '10px', height: '10px' });
         setCursorBackgroundColor(getComputedStyle(document.documentElement).getPropertyValue('--primary-color'));
     };
@@ -47,10 +45,10 @@ function Cursor() {
             link.addEventListener('mouseleave', handleMouseLeaveLink);
         });
 
-        const changeCursorElements = document.querySelectorAll('.change_cursor');
-        changeCursorElements.forEach((element) => {
-            element.addEventListener('mouseenter', handleMouseEnterChangeCursor);
-            element.addEventListener('mouseleave', handleMouseLeaveChangeCursor);
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach((button) => {
+            button.addEventListener('mouseenter', handleMouseEnterButton);
+            button.addEventListener('mouseleave', handleMouseLeaveButton);
         });
 
         return () => {
@@ -59,9 +57,9 @@ function Cursor() {
                 link.removeEventListener('mouseleave', handleMouseLeaveLink);
             });
 
-            changeCursorElements.forEach((element) => {
-                element.removeEventListener('mouseenter', handleMouseEnterChangeCursor);
-                element.removeEventListener('mouseleave', handleMouseLeaveChangeCursor);
+            buttons.forEach((button) => {
+                button.removeEventListener('mouseenter', handleMouseEnterButton);
+                button.removeEventListener('mouseleave', handleMouseLeaveButton);
             });
         };
     }, []);
