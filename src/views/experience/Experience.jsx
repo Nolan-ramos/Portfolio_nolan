@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Cursor from '../../components/cursor/Cursor';
 import MacButtons from '../../components/mac_buttons/mac_buttons';
 import Title from '../../components/title/Title';
 import './experience.scss';
@@ -6,26 +7,18 @@ import experienceData from './experienceData.json';
 
 function Experience() {
     const [activeSubcategory, setActiveSubcategory] = useState(null);
-    const [activeSubcategoryIndices, setActiveSubcategoryIndices] = useState(new Array(experienceData.length).fill(null));
 
-    const handleSubcategoryClick = (categoryIndex, subcategoryIndex, subcategoryData) => {
-        setActiveSubcategoryIndices((prevIndices) => {
-            const newIndices = [...prevIndices];
-            newIndices[categoryIndex] = subcategoryIndex;
-            return newIndices;
-        });
-
-        setActiveSubcategory(null);
-
-        setActiveSubcategoryIndices((prevIndices) => {
-            const newIndices = [...prevIndices];
-            newIndices[categoryIndex] = null;
-            return newIndices;
-        });
-
-        setTimeout(() => {
-            setActiveSubcategory(subcategoryData);
-        }, 10);
+    const handleSubcategoryClick = (subcategoryData) => {
+        if (activeSubcategory === subcategoryData) {
+            setActiveSubcategory(null);
+        } else {
+            // Réinitialisez l'état de la sous-catégorie active à null
+            setActiveSubcategory(null);
+            // Attendez un court instant pour que la désactivation se produise avant de réactiver
+            setTimeout(() => {
+                setActiveSubcategory(subcategoryData);
+            }, 0);
+        }
     };
 
     return (
@@ -45,8 +38,10 @@ function Experience() {
                                     {categoryData.subcategories.map((subcategoryData, subcategoryIndex) => (
                                         <div key={subcategoryIndex} className={subcategoryData.title}>
                                             <button
-                                                onClick={() => handleSubcategoryClick(categoryIndex, subcategoryIndex, subcategoryData)}
-                                                className={`experience_content_accordeon_title_subcategory ${activeSubcategoryIndices[categoryIndex] === subcategoryIndex ? 'active' : ''}`}
+                                                onClick={() => handleSubcategoryClick(subcategoryData)}
+                                                className={`experience_content_accordeon_title_subcategory ${
+                                                    activeSubcategory === subcategoryData ? 'active' : ''
+                                                }`}
                                             >
                                                 {subcategoryData.title}
                                             </button>
@@ -61,7 +56,7 @@ function Experience() {
                             <div className="fade-in">
                                 <h3>{activeSubcategory.title}</h3>
                                 {activeSubcategory.contents.map((content, contentIndex) => (
-                                    <div key={contentIndex}>
+                                    <div key={contentIndex} className={activeSubcategory ? 'active' : ''}>
                                         {content.text && <p>{content.text}</p>}
                                         {content.words && (
                                             <ul>
@@ -78,6 +73,7 @@ function Experience() {
                     </div>
                 </div>
             </div>
+            <Cursor />
         </div>
     );
 }

@@ -2,9 +2,24 @@
     &_container{
         display: flex;
         flex-direction: column;
-        margin: 100px 200px;
-        height:800px;
+        margin: 96px 192px;
+        height:600px;
         backdrop-filter: blur(40px);
+        @media screen and (min-width: 1900px) {
+            height:70vh;
+        }
+        @media screen and (max-width: 1200px) {
+            margin: 96px;
+        }
+        @media screen and (max-width: 1023px) {
+            margin: 96px 48px;
+        }
+        @media screen and (max-width: 767px) {
+            margin: 96px 24px;
+        }
+        @media screen and (max-width: 340px) {
+            margin: 96px 12px;
+        }
     }
     &_header{
         display: flex;
@@ -12,7 +27,7 @@
         align-items: center;
         width:100%;
         background: #001321;
-        padding:10px 20px;
+        padding:12px 24px;
         border-top-right-radius: 12px;
         border-top-left-radius: 12px;
         &_title{
@@ -24,7 +39,7 @@
         width: 100%;
         height:100%;
         &_accordeon{
-            width: calc(100% / 4);
+            width: 450px;
             background-color: rgba(12, 60, 66, 0.5);
             border-bottom-left-radius: 12px;
             padding:24px;
@@ -39,6 +54,7 @@
                 &_subcategory{
                     font-weight: 200;
                     opacity: 0.7;
+                    transition: 0.3s ease-in-out;
                 }
             }
             .active{
@@ -47,7 +63,7 @@
             }
         }
         &_contenu{
-            width: calc(100% / 4 * 3);
+            width: 100%;
             background-color: rgba(95, 255, 250, 0.2);
             border-bottom-right-radius: 12px;
             padding:24px;

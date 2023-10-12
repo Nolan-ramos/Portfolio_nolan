@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.scss';
 import Background from './components/background/Background';
-import Cursor from './components/cursor/Cursor';
 import Header from './components/header/Header';
 import Navbar from './components/navbar/Navbar';
 
@@ -25,7 +24,6 @@ function App() {
         </Router>
       </div>
       <Background />
-      <Cursor />
     </>
   );
 }

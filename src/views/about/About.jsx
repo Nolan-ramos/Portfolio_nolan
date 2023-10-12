@@ -1,5 +1,6 @@
-import Title from '../../components/title/Title';
 import Code from '../../components/about/code/Code';
+import Cursor from '../../components/cursor/Cursor';
+import Title from '../../components/title/Title';
 import './about.scss';
 
 function About() {
@@ -8,6 +9,8 @@ function About() {
             <Title title="About" />
             <Code/>
             <Title title="My expertise" />
+            
+            <Cursor />
         </div>
     )
 }
