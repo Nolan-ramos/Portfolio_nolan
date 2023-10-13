@@ -1,4 +1,5 @@
 .experience{
+    box-sizing: border-box;
     &_container{
         display: flex;
         flex-direction: column;
@@ -36,14 +37,19 @@
         }
     }
     &_content{
+        position: relative;
         display: flex;
         width: 100%;
         height:100%;
+        overflow-x:hidden;
         &_accordeon{
             width: 400px;
             background-color: rgba(12, 60, 66, 0.5);
             border-bottom-left-radius: 12px;
             padding:24px;
+            @media screen and (max-width: 767px) {
+                width: 100%;
+            }
             &_category{
                 &_title{
                     display: flex;
@@ -95,18 +101,23 @@
         &_contenu{
             position: relative;
             width: 100%;
+            height:calc(600px - 40px);
             background-color: rgba(95, 255, 250, 0.2);
             border-bottom-right-radius: 12px;
-            overflow-y: scroll;
+            overflow-y: auto;
             padding:64px 48px 48px 48px;
             @media screen and (min-width: 1900px) {
+                height:calc(70vh - 40px);
                 padding:64px 48px 48px 48px;
             }
-            @media screen and (max-width: 1200px) {
+            @media screen and (max-width: 1250px) {
                 padding:64px 24px 48px 24px;
             }
             @media screen and (max-width: 1023px) {
                 padding:64px 48px 48px 48px;
+            }
+            @media screen and (max-width: 767px) {
+                border-bottom-left-radius: 12px;
             }
             &_container{
                 padding-bottom: 24px;
@@ -194,4 +205,3 @@
         }
     }
 }
-

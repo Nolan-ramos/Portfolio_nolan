@@ -16,6 +16,21 @@
                         "list": [
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                             "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Quisque tincidunt ipsum eu justo vulputate, eget feugiat.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Quisque tincidunt ipsum eu justo vulputate, eget feugiat.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Quisque tincidunt ipsum eu justo vulputate, eget feugiat.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Quisque tincidunt ipsum eu justo vulputate, eget feugiat.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Quisque tincidunt ipsum eu justo vulputate, eget feugiat.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
                             "Quisque tincidunt ipsum eu justo vulputate, eget feugiat."
                         ]
                     }
@@ -112,11 +127,11 @@
                 "title": "Competences.txt",
                 "contents": [
                     {
-                        "title": "Framework Front-end",
+                        "title": "Framework Front",
                         "list": ["React.js", "Vue.js"]
                     },
                     {
-                        "title": "Développement Back-end",
+                        "title": "Développement Back",
                         "list": ["PHP", "Node.js", "Express.js"]
                     },
                     {
