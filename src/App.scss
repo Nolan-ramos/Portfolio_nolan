@@ -410,16 +410,16 @@ textarea {
   padding: 0.2em 0;
 }
 
-body::-webkit-scrollbar {
-  width: 3px; /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: #011627;; /* color of the tracking area */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #09414b; /* color of the scroll thumb */
+body{
+  &::-webkit-scrollbar {
+    width: 3px; /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track{
+    background: #011627; /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: #09414b; /* color of the scroll thumb */
+  }
 }
 
 *{

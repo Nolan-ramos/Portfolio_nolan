@@ -6,8 +6,18 @@
                 "title": "Administrateur.txt",
                 "contents": [
                     {
-                        "title": "NATURE SAS",
-                        "text": "NATURE SAS • Combs-La-Ville • Stage • 11/2018 - 01/2019 "
+                        "title": "Informations",
+                        "list": [
+                            "NATURE SAS • Combs-La-Ville • Stage • 11/2018 - 01/2019"
+                        ]
+                    },
+                    {
+                        "title": "Tâches effectuées",
+                        "list": [
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Quisque tincidunt ipsum eu justo vulputate, eget feugiat."
+                        ]
                     }
                 ]
             },
@@ -15,8 +25,17 @@
                 "title": "Technicien.txt",
                 "contents": [
                     {
-                        "title": "J Diffusion",
-                        "text": "J Diffusion • Moissy-Cramayel • Stage • 02/2018 - 04/2018"
+                        "title": "Informations",
+                        "list": [
+                            "J Diffusion • Moissy-Cramayel • Stage • 02/2018 - 04/2018"
+                        ]
+                    },
+                    {
+                        "title": "Tâches effectuées",
+                        "list": [
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices."
+                        ]
                     }
                 ]
             },
@@ -24,22 +43,44 @@
                 "title": "Technicien.txt",
                 "contents": [
                     {
-                        "title": "SERVICINFO",
-                        "text": "SERVICINFO • Brie-Comte-Robert • Stage • 05/2017 - 06/2017"
+                        "title": "Informations",
+                        "list": [
+                            "SERVICINFO • Brie-Comte-Robert • Stage • 05/2017 - 06/2017"
+                        ]
+                    },
+                    {
+                        "title": "Tâches effectuées",
+                        "list": [
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices."
+                        ]
                     }
                 ]
             }
         ]
     },
     {
-        "category": "Jobs",
+        "category": "Formations",
         "subcategories": [
             {
                 "title": "Bachelor.txt",
                 "contents": [
                     {
-                        "title": "Bachelor développeur web",
-                        "text": "Hetic école informatique • Montreuil • 2021 - 2024"
+                        "title": "Informations",
+                        "list": [
+                            "Hetic école informatique • Montreuil • 2021 - 2024"
+                        ]
+                    },
+                    {
+                        "title": "Compétences apprises",
+                        "list": [
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices."
+                        ]
                     }
                 ]
             },
@@ -47,8 +88,18 @@
                 "title": "BTS.txt",
                 "contents": [
                     {
-                        "title": "BTS systèmes informatiques aux organisations",
-                        "text": "Lycée du Parc des Loges • Évry-Courcouronnes • 2020 - 2021"
+                        "title": "Informations",
+                        "list": [
+                            "Lycée du Parc des Loges • Évry-Courcouronnes • 2020 - 2021"
+                        ]
+                    },
+                    {
+                        "title": "Compétences apprises",
+                        "list": [
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        ]
                     }
                 ]
             }
@@ -58,15 +109,32 @@
         "category": "Skills",
         "subcategories": [
             {
-                "title": "Compétences.txt",
+                "title": "Competences.txt",
                 "contents": [
                     {
-                        "title": "Framework",
-                        "words": ["React.js", "Vue.js"]
+                        "title": "Framework Front-end",
+                        "list": ["React.js", "Vue.js"]
                     },
                     {
-                        "title": "Web",
-                        "words": ["HTML", "CSS", "JavaScript"]
+                        "title": "Développement Back-end",
+                        "list": ["PHP", "Node.js", "Express.js"]
+                    },
+                    {
+                        "title": "Développement web",
+                        "list": ["HTML", "CSS", "SASS", "JavaScript"]
+                    },
+                    {
+                        "title": "Design",
+                        "list": ["Figma", "Adobe"]
+                    },
+                    {
+                        "title": "Logiciels",
+                        "list": ["Github", "Gitlab"]
+                    }
+                    ,
+                    {
+                        "title": "Autre",
+                        "list": ["Python"]
                     }
                 ]
             },
