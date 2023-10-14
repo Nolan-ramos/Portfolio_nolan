@@ -143,10 +143,10 @@ function Experience() {
                     <div className="experience_content_contenu">
                         {activeSubcategory && (
                             <div className={`${activeSubcategory.title.toLowerCase().replace(/\s/g, '-').replace('.txt', '')}`}>
+                                <button className='experience_content_contenu_close' onClick={() => handleSubcategoryClick(activeSubcategory, true)}><RowRight /></button>
+                                <h3 className='experience_content_contenu_file_title'>{activeSubcategory.title}</h3>
                                 {activeSubcategory.contents.map((content, contentIndex) => (
                                     <div key={contentIndex} className="fade-in experience_content_contenu_container">
-                                        <button className='experience_content_contenu_close' onClick={() => handleSubcategoryClick(activeSubcategory, true)}><RowRight /></button>
-                                        <h3 className='experience_content_contenu_file_title'>{activeSubcategory.title}</h3>
                                         <h4 className='experience_content_contenu_title'>
                                             <span>{"{-"}</span>
                                             {content.title}
@@ -176,7 +176,15 @@ function Experience() {
                                                 ))}
                                             </ul>
                                         )}
-                                        {content.number && <p>{content.number}</p>}
+                                        {content.number && (
+                                            <div>
+                                                <span>{"{"}</span>
+                                                {Array.from({ length: Math.max(5, content.number) }, (_, index) => (
+                                                    <p key={index} className={index < content.number ? "level" : ""}>-</p>
+                                                ))}
+                                                <span>{"}"}</span>
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
