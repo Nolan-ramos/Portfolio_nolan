@@ -7,6 +7,7 @@
         height:600px;
         backdrop-filter: blur(40px);
         border-radius: 12px;
+        overflow: hidden;
         @media screen and (min-width: 1900px) {
             height:70vh;
         }
@@ -47,8 +48,11 @@
             background-color: rgba(12, 60, 66, 0.5);
             border-bottom-left-radius: 12px;
             padding:24px;
+            opacity: 1;
             @media screen and (max-width: 767px) {
                 width: 100%;
+                border-bottom-right-radius: 12px;
+                transition: 0.3s ease-in-out;
             }
             &_category{
                 &_title{
@@ -100,11 +104,12 @@
         }
         &_contenu{
             position: relative;
+            right:0;
             width: 100%;
-            height:calc(600px - 40px);
+            height:calc(600px - 43.5px);
             background-color: rgba(95, 255, 250, 0.2);
             border-bottom-right-radius: 12px;
-            overflow-y: auto;
+            overflow-y: scroll;
             padding:64px 48px 48px 48px;
             @media screen and (min-width: 1900px) {
                 height:calc(70vh - 40px);
@@ -117,7 +122,13 @@
                 padding:64px 48px 48px 48px;
             }
             @media screen and (max-width: 767px) {
+                position: absolute;
                 border-bottom-left-radius: 12px;
+                right:calc(-100% - 100px);
+                transition: 0.3s ease-in-out;
+            }
+            @media screen and (max-width: 340px) {
+                padding:64px 24px 48px 24px;
             }
             &_container{
                 padding-bottom: 24px;
@@ -161,7 +172,6 @@
                 }
             }
             &_text{
-                line-height:normal;
                 span{
                     margin-right: 8px;
                     color:var(--primary-color);
@@ -203,5 +213,8 @@
         @media screen and (max-width: 1023px) {
             flex: 0 0 100%;
         }
+    }
+    .experience_content_contenu_file_title{
+        opacity:0.4;
     }
 }

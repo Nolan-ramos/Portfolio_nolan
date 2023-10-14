@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cursor from '../../components/cursor/Cursor';
 import File from '../../components/experience/File.jsx';
 import Folder from '../../components/experience/Folder.jsx';
@@ -12,6 +12,40 @@ function Experience() {
     const [activeCategories, setActiveCategories] = useState([]);
     const [activeSubcategory, setActiveSubcategory] = useState(null);
     const [arrowRotated, setArrowRotated] = useState({});
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    const handleResize = () => {
+        setIsSmallScreen(window.innerWidth < 767);
+        const contenuElement = document.querySelector('.experience_content_contenu');
+        const accordeonElement = document.querySelector('.experience_content_accordeon');
+        if (window.innerWidth >= 767) {
+            if (contenuElement) {
+                contenuElement.style.right = '0';
+                contenuElement.style.opacity = '1';
+            }
+            if (accordeonElement) {
+                accordeonElement.style.opacity = '1';
+            }
+        }
+        else{
+            if (contenuElement) {
+                contenuElement.style.right = 'calc(-100% - 100px)';
+                contenuElement.style.opacity = '0';
+            }
+            if (accordeonElement) {
+                accordeonElement.style.opacity = '1';
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleCategoryClick = (categoryIndex) => {
         if (activeCategories.includes(categoryIndex)) {
@@ -28,13 +62,43 @@ function Experience() {
     };
 
     const handleSubcategoryClick = (subcategoryData) => {
-        if (activeSubcategory === subcategoryData) {
-            setActiveSubcategory(null);
-        } else {
-            setActiveSubcategory(null);
-            setTimeout(() => {
+        if (window.innerWidth < 767) {
+            const contenuElement = document.querySelector('.experience_content_contenu');
+            const accordeonElement = document.querySelector('.experience_content_accordeon');
+            if (activeSubcategory === subcategoryData) {
+                setActiveSubcategory(null);
+                if (contenuElement) {
+                    contenuElement.style.right = 'calc(-100% - 100px)';
+                    contenuElement.style.opacity = '0';
+                }
+                if (accordeonElement) {
+                    accordeonElement.style.opacity = '1';
+                }
+            } else {
                 setActiveSubcategory(subcategoryData);
-            }, 0);
+                if (contenuElement) {
+                    contenuElement.style.right = '0';
+                    contenuElement.style.opacity = '1';
+                }
+                if (accordeonElement) {
+                    accordeonElement.style.opacity = '0';
+                }
+            }
+        } else {
+            if (activeSubcategory === subcategoryData) {
+                setActiveSubcategory(null);
+            } 
+            else {
+                setTimeout(() => {
+                    setActiveSubcategory(subcategoryData);
+                    const contentElements = document.querySelectorAll('.experience_content_contenu .experience_content_contenu_container');
+                    contentElements.forEach((el) => {
+                        el.classList.remove('fade-in');
+                        void el.offsetWidth;
+                        el.classList.add('fade-in');
+                    });
+                }, 0);
+            }
         }
     };
 
@@ -78,10 +142,10 @@ function Experience() {
                     </div>
                     <div className="experience_content_contenu">
                         {activeSubcategory && (
-                            <div className={`fade-in ${activeSubcategory.title.toLowerCase().replace(/\s/g, '-').replace('.txt', '')}`}>
-                                <h3 className='experience_content_contenu_file_title'>{activeSubcategory.title}</h3>
+                            <div className={`${activeSubcategory.title.toLowerCase().replace(/\s/g, '-').replace('.txt', '')}`}>
                                 {activeSubcategory.contents.map((content, contentIndex) => (
-                                    <div key={contentIndex} className="experience_content_contenu_container">
+                                    <div key={contentIndex} className="fade-in experience_content_contenu_container">
+                                        <h3 className='experience_content_contenu_file_title'>{activeSubcategory.title}</h3>
                                         <h4 className='experience_content_contenu_title'>
                                             <span>{"{-"}</span>
                                             {content.title}
