@@ -49,6 +49,7 @@
             border-bottom-left-radius: 12px;
             padding:24px;
             opacity: 1;
+            overflow: hidden;
             @media screen and (max-width: 767px) {
                 width: 100%;
                 border-bottom-right-radius: 12px;
