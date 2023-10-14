@@ -61,11 +61,11 @@ function Experience() {
         return activeCategories.includes(categoryIndex);
     };
 
-    const handleSubcategoryClick = (subcategoryData) => {
+    const handleSubcategoryClick = (subcategoryData, shouldClose) => {
         if (window.innerWidth < 767) {
             const contenuElement = document.querySelector('.experience_content_contenu');
             const accordeonElement = document.querySelector('.experience_content_accordeon');
-            if (activeSubcategory === subcategoryData) {
+            if (activeSubcategory === subcategoryData || shouldClose) {
                 setActiveSubcategory(null);
                 if (contenuElement) {
                     contenuElement.style.right = 'calc(-100% - 100px)';
@@ -85,10 +85,9 @@ function Experience() {
                 }
             }
         } else {
-            if (activeSubcategory === subcategoryData) {
+            if (activeSubcategory === subcategoryData || shouldClose) {
                 setActiveSubcategory(null);
-            } 
-            else {
+            } else {
                 setTimeout(() => {
                     setActiveSubcategory(subcategoryData);
                     const contentElements = document.querySelectorAll('.experience_content_contenu .experience_content_contenu_container');
@@ -101,6 +100,7 @@ function Experience() {
             }
         }
     };
+    
 
     return (
         <div className='experience fade-in'>
@@ -145,6 +145,7 @@ function Experience() {
                             <div className={`${activeSubcategory.title.toLowerCase().replace(/\s/g, '-').replace('.txt', '')}`}>
                                 {activeSubcategory.contents.map((content, contentIndex) => (
                                     <div key={contentIndex} className="fade-in experience_content_contenu_container">
+                                        <button className='experience_content_contenu_close' onClick={() => handleSubcategoryClick(activeSubcategory, true)}><RowRight /></button>
                                         <h3 className='experience_content_contenu_file_title'>{activeSubcategory.title}</h3>
                                         <h4 className='experience_content_contenu_title'>
                                             <span>{"{-"}</span>
