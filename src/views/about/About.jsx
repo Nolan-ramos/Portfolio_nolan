@@ -8,8 +8,8 @@ function About() {
         <div className='about fade-in'>
             <Title title="About" />
             <Code/>
-            <Title title="My expertise" />
-            
+            {/* <Title title="My expertise" /> */}
+            <Title title="SKills" />
             <Cursor />
         </div>
     )

@@ -9,7 +9,7 @@
         display: flex;
         align-items: center;
         margin-bottom: 12px;
-        padding: 8px 192px;
+        padding: 4px 192px;
         height:100%;
         @media screen and (max-width: 1200px) {
             align-items: start;
@@ -46,12 +46,12 @@
             @media screen and (max-width: 767px) {
                 font-size: 8px;
             }
-            @media screen and (max-width: 320px) {
+            @media screen and (max-width: 340px) {
                 font-size: 6px;
             }
         }
         &_txt{
-            font-size: 24px;
+            font-size: 20px;
             opacity: 0.3;
             transition: 1s ease-in-out;
             width: 100%;
@@ -59,13 +59,19 @@
                 opacity: 1;
                 transition: 0s ease-in-out;
             }
+            @media screen and (min-width: 1900px) {
+                font-size: 24px;
+            }
             @media screen and (max-width: 1023px) {
-                font-size: 20px;
+                font-size: 18px;
             }
             @media screen and (max-width: 767px) {
                 font-size: 16px;
             }
-            @media screen and (max-width: 320px) {
+            @media screen and (max-width: 480px) {
+                font-size: 14px;
+            }
+            @media screen and (max-width: 340px) {
                 font-size: 12px;
             }
         }

@@ -145,6 +145,10 @@
                     {
                         "title": "Logiciels",
                         "list": ["Github", "Gitlab"]
+                    },
+                    {
+                        "title": "Base de données",
+                        "list": ["SQL", "PhpMyAdmin"]
                     }
                     ,
                     {
