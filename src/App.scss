@@ -438,10 +438,12 @@ body{
   position:relative;
   z-index: 4;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .main{
   padding:100px 0px;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
