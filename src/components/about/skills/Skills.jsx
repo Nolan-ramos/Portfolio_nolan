@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './skills.scss';
 import Css from './svg/Css';
 import Figma from './svg/Figma';
@@ -26,10 +27,67 @@ const icons = [
 ];
 
 function Skills() {
+    const initialIconState = icons.map(() => ({
+        isHovered: false,
+        direction: { left: '0', top: '0' },
+    }));
+
+    const [iconStates, setIconStates] = useState(initialIconState);
+
+    const handleMouseEnter = (index) => {
+        const directions = [
+            { left: '-150px', top: '-150px' },
+            { left: '150px', top: '-150px' },
+            { left: '-150px', top: '150px' },
+            { left: '150px', top: '150px' },
+        ];
+
+        const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+
+        setIconStates((prevState) =>
+            prevState.map((iconState, i) =>
+                i === index
+                    ? {
+                          ...iconState,
+                          isHovered: true,
+                          direction: randomDirection,
+                      }
+                    : iconState
+            )
+        );
+    };
+
+    const handleMouseLeave = (index) => {
+        setTimeout(() => {
+            setIconStates((prevState) =>
+                prevState.map((iconState, i) =>
+                    i === index
+                        ? {
+                              ...iconState,
+                              isHovered: false,
+                              direction: { left: '0', top: '0' },
+                          }
+                        : iconState
+                )
+            );
+        }, 3000);
+    };
+
     return (
         <div className='skills'>
             {icons.map((icon, index) => (
-                <div className='skills_content' key={index}>
+                <div
+                    className='skills_content'
+                    key={index}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={() => handleMouseLeave(index)}
+                    style={{
+                        position: 'relative',
+                        left: iconStates[index].isHovered ? iconStates[index].direction.left : '0',
+                        top: iconStates[index].isHovered ? iconStates[index].direction.top : '0',
+                        transition: 'left 0.3s ease, top 0.3s ease',
+                    }}
+                >
                     <icon.component />
                     <span>{icon.text}</span>
                 </div>
