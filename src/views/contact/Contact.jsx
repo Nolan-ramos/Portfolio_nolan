@@ -1,27 +1,30 @@
+// import axios from 'axios';
+// import { useState } from 'react';
 import Cursor from '../../components/cursor/Cursor';
 import Title from '../../components/title/Title';
 import './contact.scss';
 
 function Contact() {
-
     return (
         <div className='contact fade-in'>
             <Title title="Contact" />
-            <form name="contact" method="POST" data-netlify="true">
+            <form 
+                name="contact" 
+                method="post" 
+                data-netlify="true"
+                onSubmit="submit">
+                <input type="hidden" name="form-name" value="contact" />
                 <p>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" />
+                    <label>Your Name: <input type="text" name="name"/></label>
                 </p>
                 <p>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" />
+                    <label>Your Email: <input type="email" name="email"/></label>
                 </p>
                 <p>
-                    <label htmlFor="message">Message:</label>
-                    <textarea id="message" name="message" />
+                    <label>Message: <textarea name="message"></textarea></label>
                 </p>
                 <p>
-                    <button type="submit">Send</button>
+                    <button type="submit">Envoyer</button>
                 </p>
             </form>
             <Cursor />
