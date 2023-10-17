@@ -431,17 +431,19 @@ body{
   color:#fff;
   line-height:normal;
   background:#011627;
-  
+  overflow-x: hidden;
 }
 
 .App{
   position:relative;
   z-index: 4;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .main{
   padding:100px 0px;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
