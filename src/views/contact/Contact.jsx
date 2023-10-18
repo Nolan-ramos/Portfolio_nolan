@@ -13,11 +13,15 @@ const subjects = [
 ];
 
 function Contact() {
-    const [checkboxes, setCheckboxes] = useState({});
+    const [selectedSubjects, setSelectedSubjects] = useState([]);
 
     const handleCheckboxChange = (e) => {
-        const { name } = e.target;
-        setCheckboxes({ ...checkboxes, [name]: !checkboxes[name] });
+        const { value } = e.target;
+        if (selectedSubjects.includes(value)) {
+            setSelectedSubjects(selectedSubjects.filter(subject => subject !== value));
+        } else {
+            setSelectedSubjects([...selectedSubjects, value]);
+        }
     };
 
     return (
@@ -34,13 +38,13 @@ function Contact() {
                 </div>
                 <div className='contact_form_checkbox'>
                     {subjects.map((subject, index) => (
-                        <label key={`option${index + 1}`} className={`contact_form_checkbox_button ${checkboxes[subject] ? 'checked' : ''}`}>
+                        <label key={`option${index + 1}`} className={`contact_form_checkbox_button ${selectedSubjects.includes(subject) ? 'checked' : ''}`}>
                             <input
                                 type="checkbox"
                                 id={`option${index + 1}`}
-                                name={subject}
+                                name="sujet"
                                 value={subject}
-                                checked={!!checkboxes[subject]}
+                                checked={selectedSubjects.includes(subject)}
                                 onChange={handleCheckboxChange}
                             />
                             {subject}
