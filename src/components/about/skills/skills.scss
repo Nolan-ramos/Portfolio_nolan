@@ -3,10 +3,12 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    
     column-gap: 24px;
     row-gap: 48px;
-    margin:200px 0 100px 0;
+    margin:192px 0 96px 0;
+    @media screen and (min-width: 1900px) {
+        column-gap: 48px;
+    }
     &_content{
         display: flex;
         align-items: center;
@@ -16,8 +18,12 @@
         border-radius: 12px;
         width:100px;
         height:100px;
-        background-color: rgba(95, 255, 250, 0.2);
+        background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
         animation: icon_move1 4s linear infinite;
+        @media screen and (min-width: 1900px) {
+            width:120px;
+            height:120px;
+        }
         &:nth-child(2n) {
             animation-name: icon_move2;
         }
@@ -25,6 +31,7 @@
             width:50px;
             height:50px;
             filter: drop-shadow(0 0 8px var(--primary-color));
+            margin-bottom: 8px;
             path{
                 color:var(--primary-color);
                 

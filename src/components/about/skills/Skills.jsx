@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './skills.scss';
 import Css from './svg/Css';
 import Figma from './svg/Figma';
@@ -13,13 +13,13 @@ import Sql from './svg/Sql';
 import Vuejs from './svg/Vuejs';
 
 const icons = [
+    {component: Nodejs, text: 'Nodejs' },
     { component: Reactjs, text: 'React.js' },
     { component: Vuejs, text: 'Vue.js' },
     { component: Javascript, text: 'Javascript' },
     { component: Html, text: 'Html' },
     { component: Css, text: 'Css' },
     { component: Php, text: 'Php' },
-    { component: Nodejs, text: 'Nodejs' },
     { component: Sql, text: 'Sql' },
     { component: Sass, text: 'Sass' },
     { component: Figma, text: 'Figma' },
