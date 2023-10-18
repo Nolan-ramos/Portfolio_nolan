@@ -25,7 +25,7 @@ function Contact() {
                     <label>
                         <input type="checkbox" name="sujet" value="sujet 2" /> sujet 2
                     </label>
-                    <label>
+                    <label> 
                         <input type="checkbox" name="sujet" value="sujet 3" /> sujet 3
                     </label>
                     <label>
