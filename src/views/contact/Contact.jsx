@@ -1,42 +1,59 @@
-// import axios from 'axios';
-// import { useState } from 'react';
+import React, { useState } from 'react';
 import Cursor from '../../components/cursor/Cursor';
 import Title from '../../components/title/Title';
 import './contact.scss';
 
+const subjects = [
+    'Front-end',
+    'Back-end',
+    'Full-stack',
+    'Design UI',
+    'Design UX',
+    'Design UI/UX',
+];
+
 function Contact() {
+    const [checkboxes, setCheckboxes] = useState({
+        option1: false,
+        option2: false,
+        option3: false,
+        option4: false,
+        option5: false,
+        option6: false,
+    });
+
+    const handleCheckboxChange = (e) => {
+        const { name } = e.target;
+        setCheckboxes({ ...checkboxes, [name]: !checkboxes[name] });
+    };
+
     return (
         <div className='contact fade-in'>
             <Title title="Contact" />
-            <form 
-                name="contact" 
-                method="post" 
-                data-netlify="true"
-                onSubmit="submit">
+            <form className='contact_form' name="contact" method="post" data-netlify="true" onSubmit="submit">
                 <input type="hidden" name="form-name" value="contact" />
-                    <label>Your Name: 
-                    <input type="text" name="name"/></label>
-                    <label>Your Email: 
-                    <input type="email" name="email"/></label>
-                    <label>Message: <textarea name="message"></textarea></label>
-                    <label>
-                    <input type="checkbox" name="option1" value="sujet 1" /> sujet 1
-                    </label>
-                    <label>
-                        <input type="checkbox" name="sujet" value="sujet 2" /> sujet 2
-                    </label>
-                    <label> 
-                        <input type="checkbox" name="sujet" value="sujet 3" /> sujet 3
-                    </label>
-                    <label>
-                        <input type="checkbox" name="sujet" value="sujet 4" /> sujet 4
-                    </label>
-                    <label>
-                        <input type="checkbox" name="sujet" value="sujet 5" /> sujet 5
-                    </label>
-                    <label>
-                        <input type="checkbox" name="sujet" value="sujet 6" /> sujet 6
-                    </label>
+                    <div className='contact_form_input'>
+                        <input type="text" name="name" placeholder='name'/>
+                        <input type="email" name="email" placeholder='email'/>
+                    </div>
+                    <div className='contact_form_textarea'>
+                        <textarea name="message" placeholder='message'></textarea>
+                    </div>
+                    <div className='contact_form_checkbox'>
+                        {subjects.map((subject, index) => (
+                            <label key={`option${index + 1}`} className={`contact_form_checkbox_button ${checkboxes[`option${index + 1}`] ? 'checked' : ''}`}>
+                                <input
+                                    type="checkbox"
+                                    id={`option${index + 1}`}
+                                    name={`option${index + 1}`}
+                                    value={subject}
+                                    checked={checkboxes[`option${index + 1}`]}
+                                    onChange={handleCheckboxChange}
+                                />
+                                {subject}
+                            </label>
+                        ))}
+                    </div>
                     <button type="submit">Envoyer</button>
             </form>
             <Cursor />

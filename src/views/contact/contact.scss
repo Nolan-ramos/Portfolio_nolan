@@ -1,6 +1,25 @@
-.contact{
+.contact {
     input,
-    textarea{
-        color:white;
+    textarea {
+        color: white;
+    }
+
+    &_form {
+        &_checkbox {
+            &_button{
+                background: red;
+            }
+            .checked{
+                background: green;
+            }
+            input[type="checkbox"]{
+                appearance: none;
+            }
+        }
     }
 }
+
+
+
+
+
