@@ -1,20 +1,55 @@
 .contact {
-    input,
-    textarea {
-        color: white;
+    box-sizing: border-box;
+    @media screen and (min-width: 1900px) {
+        display: flex;
+        align-items:center ;
+        flex-direction: column;
     }
-
-    &_form {
-        &_checkbox {
-            &_button{
-                background: red;
+    &_container{
+        display: flex;
+        justify-content: center;
+        margin: 96px 192px;
+        height:600px;
+        backdrop-filter: blur(40px);
+        border-radius: 12px;
+        @media screen and (min-width: 1900px) {
+            width:70%;
+            height:75vh;
+        }
+        @media screen and (max-width: 1200px) {
+            margin: 96px;
+        }
+        @media screen and (max-width: 1023px) {
+            margin: 96px 48px;
+        }
+        @media screen and (max-width: 767px) {
+            margin: 96px 24px;
+        }
+        @media screen and (max-width: 340px) {
+            margin: 96px 12px;
+        }
+        &_form {
+            width:60%;
+            background-color: rgba(12, 60, 66, 0.5);
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            &_checkbox {
+                &_button{
+                    background: red;
+                }
+                .checked{
+                    background: green;
+                }
+                input[type="checkbox"]{
+                    appearance: none;
+                }
             }
-            .checked{
-                background: green;
-            }
-            input[type="checkbox"]{
-                appearance: none;
-            }
+        }
+        &_details{
+            width:40%;
+            background-color: rgba(36, 112, 111, 0.6);
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
         }
     }
 }

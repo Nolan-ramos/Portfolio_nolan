@@ -1,5 +1,10 @@
 .experience{
     box-sizing: border-box;
+    @media screen and (min-width: 1900px) {
+        display: flex;
+        align-items:center ;
+        flex-direction: column;
+    }
     &_container{
         display: flex;
         flex-direction: column;
@@ -9,7 +14,8 @@
         border-radius: 12px;
         overflow: hidden;
         @media screen and (min-width: 1900px) {
-            height:80vh;
+            width:70%;
+            height:75vh;
         }
         @media screen and (max-width: 1200px) {
             margin: 96px;
@@ -107,7 +113,7 @@
             position: relative;
             right:0;
             width: 100%;
-            background-color: rgba(95, 255, 250, 0.2);
+            background-color: rgba(36, 112, 111, 0.6);
             border-bottom-right-radius: 12px;
             overflow-y: scroll;
             padding:64px 48px 48px 48px;
