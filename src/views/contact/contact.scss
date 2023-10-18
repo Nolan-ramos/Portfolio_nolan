@@ -10,8 +10,7 @@
         justify-content: center;
         margin: 96px 192px;
         height:600px;
-        backdrop-filter: blur(40px);
-        border-radius: 12px;
+        border-radius: 20px;
         background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
         @media screen and (min-width: 1900px) {
             width:70%;
@@ -25,6 +24,9 @@
         }
         @media screen and (max-width: 767px) {
             margin: 96px 24px;
+            flex-direction: column;
+            height:auto;
+            order: 2;
         }
         @media screen and (max-width: 340px) {
             margin: 96px 12px;
@@ -35,6 +37,11 @@
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
             padding:48px;
+            @media screen and (max-width: 767px) {
+                width:100%;
+                order: 1;
+                border-radius: 20px;
+            }
             &_checkbox {
                 &_button{
                     background: red;
@@ -52,6 +59,10 @@
             border-top-right-radius: 12px;
             border-bottom-right-radius: 12px;
             padding:48px;
+            @media screen and (max-width: 767px) {
+                width:100%;
+                border-radius: 20px;
+            }
         }
     }
 }

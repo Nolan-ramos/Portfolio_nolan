@@ -10,8 +10,7 @@
         flex-direction: column;
         margin: 96px 192px;
         height:600px;
-        backdrop-filter: blur(40px);
-        border-radius: 12px;
+        border-radius: 20px;
         overflow: hidden;
         @media screen and (min-width: 1900px) {
             width:70%;
@@ -37,8 +36,8 @@
         width:100%;
         background: #001321;
         padding:12px 24px;
-        border-top-right-radius: 12px;
-        border-top-left-radius: 12px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
         &_title{
             color:rgba(76, 76, 76, 0.76);
         }
@@ -53,7 +52,7 @@
         &_accordeon{
             width: 400px;
             background-color: rgb(0 18 33 / 62%);
-            border-bottom-left-radius: 12px;
+            border-bottom-left-radius: 20px;
             padding:24px;
             opacity: 1;
             overflow: hidden;
@@ -62,7 +61,7 @@
             }
             @media screen and (max-width: 767px) {
                 width: 100%;
-                border-bottom-right-radius: 12px;
+                border-bottom-right-radius: 20px;
                 transition: 0.3s ease-in-out;
             }
             &_category{
@@ -117,7 +116,7 @@
             position: relative;
             right:0;
             width: 100%;
-            border-bottom-right-radius: 12px;
+            border-bottom-right-radius: 20px;
             overflow-y: scroll;
             padding:64px 48px 48px 48px;
             @media screen and (min-width: 1900px) {
@@ -131,7 +130,7 @@
             }
             @media screen and (max-width: 767px) {
                 position: absolute;
-                border-bottom-left-radius: 12px;
+                border-bottom-left-radius: 20px;
                 right:calc(-100% - 100px);
                 transition: 0.3s ease-in-out;
                 height:100%;

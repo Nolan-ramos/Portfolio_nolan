@@ -80,7 +80,6 @@ input[type=search] {
   box-sizing: content-box;
 }
 
-/*
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
@@ -90,12 +89,14 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 0px solid #263069;
+  border: 0px solid rgb(67 217 173 / 26%);
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px #263069 inset;
+  -webkit-box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
+  caret-color: white;
 }
 
+/*
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="month"]::-webkit-calendar-picker-indicator{
   filter: invert(1);
