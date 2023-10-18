@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Cursor from '../../components/cursor/Cursor';
 import Title from '../../components/title/Title';
 import './contact.scss';
@@ -34,13 +34,13 @@ function Contact() {
                 </div>
                 <div className='contact_form_checkbox'>
                     {subjects.map((subject, index) => (
-                        <label key={`option${index + 1}`} className={`contact_form_checkbox_button ${checkboxes['sujet'] ? 'checked' : ''}`}>
+                        <label key={`option${index + 1}`} className={`contact_form_checkbox_button ${checkboxes[subject] ? 'checked' : ''}`}>
                             <input
                                 type="checkbox"
                                 id={`option${index + 1}`}
-                                name="sujet"
+                                name={subject}
                                 value={subject}
-                                checked={!!checkboxes['sujet']}
+                                checked={!!checkboxes[subject]}
                                 onChange={handleCheckboxChange}
                             />
                             {subject}
