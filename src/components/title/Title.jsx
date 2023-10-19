@@ -43,7 +43,7 @@ function Title(props) {
     return (
         <h1>
             <span>{"{--"}</span>
-            {text}
+            <h1>{text}</h1>
             <p>|</p>
             <span>{"--}"}</span>
         </h1>

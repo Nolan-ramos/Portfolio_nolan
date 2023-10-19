@@ -8,7 +8,7 @@
     &_container{
         display: flex;
         flex-direction: column;
-        margin: 96px 192px;
+        margin: 96px 192px 0 192px;
         height:600px;
         border-radius: 20px;
         overflow: hidden;
@@ -17,16 +17,16 @@
             height:70vh;
         }
         @media screen and (max-width: 1200px) {
-            margin: 96px;
+            margin: 96px 96px 0 96px;
         }
         @media screen and (max-width: 1023px) {
-            margin: 96px 48px;
+            margin: 96px 48px 0 48px;
         }
         @media screen and (max-width: 767px) {
-            margin: 96px 24px;
+            margin: 96px 24px 0 24px;
         }
         @media screen and (max-width: 340px) {
-            margin: 96px 12px;
+            margin: 96px 12px 0 12px;
         }
     }
     &_header{
@@ -199,7 +199,6 @@
                 border-radius: 50%;
                 box-shadow: var(--primary-color) 0px 0px 10px;
                 path{
-                    
                     color:black;
                 }
                 @media screen and (min-width: 768px) {

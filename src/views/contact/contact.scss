@@ -8,34 +8,35 @@
     &_container{
         display: flex;
         justify-content: center;
-        margin: 96px 192px;
+        margin: 96px 192px 0 192px;
         height:600px;
         border-radius: 20px;
         background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
+        backdrop-filter: blur(19px);
         @media screen and (min-width: 1600px) {
             width:65%;
             height:70vh;
         }
         @media screen and (max-width: 1200px) {
-            margin: 96px;
+            margin: 96px 96px 0 96px;
         }
         @media screen and (max-width: 1023px) {
-            margin: 96px 48px;
+            margin: 96px 48px 0 48px;
         }
         @media screen and (max-width: 767px) {
-            margin: 96px 24px;
+            margin: 96px 24px 0 24px;
             flex-direction: column;
             height:auto;
             order: 2;
         }
         @media screen and (max-width: 340px) {
-            margin: 96px 12px;
+            margin: 96px 12px 0 12px;
         }
         &_form {
             display: flex;
             justify-content: center;
             flex-direction: column;
-            width:60%;
+            width:55%;
             background-color: rgb(0 18 33 / 62%);
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
@@ -44,15 +45,18 @@
                 padding:48px 64px;
             }
             @media screen and (max-width: 1023px) {
-                padding:24px;
+                padding:32px;
             }
             @media screen and (max-width: 767px) {
                 width:100%;
                 order: 1;
                 border-radius: 20px;
             }
+            @media screen and (max-width: 480px) {
+                padding:24px;
+            }
             &_input{
-                margin-bottom: 48px;
+                margin-bottom: 32px;
                 input{
                     width:100%;
                     padding:12px 16px;
@@ -62,7 +66,7 @@
                 }
             }
             &_textarea{
-                margin-bottom: 48px;
+                margin-bottom: 32px;
                 textarea{
                     width:100%;
                     height:120px;
@@ -74,7 +78,7 @@
                 flex-wrap: wrap;
                 row-gap: 16px;
                 column-gap: 16px;
-                margin-bottom: 48px;
+                margin-bottom: 32px;
                 &_button{
                     display: flex;
                     align-items: center;
@@ -82,6 +86,12 @@
                     background-color: rgb(46 136 148 / 18%);
                     width:calc(100%/3 - 11px);
                     padding:12px;
+                    @media screen and (max-width: 480px) {
+                        width:calc(100%/2 - 8px);
+                    }
+                    @media screen and (max-width: 320px) {
+                        width:100%;
+                    }
                 }
                 .checked{
                     background-color: #004c01;
@@ -109,13 +119,83 @@
             }
         }
         &_details{
-            width:40%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            width:45%;
+            height:100%;
             border-top-right-radius: 12px;
             border-bottom-right-radius: 12px;
             padding:48px;
+            @media screen and (min-width: 1600px) {
+                padding:64px;
+            }
+            @media screen and (max-width: 1023px) {
+                padding:32px;
+            }
             @media screen and (max-width: 767px) {
                 width:100%;
                 border-radius: 20px;
+            }
+            @media screen and (max-width: 480px) {
+                padding:24px;
+            }
+            &_text{
+                line-height: 1.4;
+                h2{
+                    font-size: 40px;
+                    font-weight: 100;
+                    @media screen and (max-width: 1200px) {
+                        font-size: 32px;
+                    }
+                    @media screen and (max-width: 767px) {
+                        font-size: 28px;
+                    }
+                }
+                p{
+                    font-size: 20px;
+                    font-weight: 300;
+                    margin-top: 24px;
+                    @media screen and (max-width: 1200px) {
+                        font-size:16px;
+                    }
+                }
+            }
+            &_reseaux{
+                h3{
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media screen and (max-width: 1200px) {
+                        font-size:20px;
+                    }
+                    @media screen and (max-width: 767px) {
+                        margin-top: 16px;
+                    }
+                }
+                &_link{
+                    margin-top: 24px;
+                    display: flex;
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding:16px;
+                        background-color: rgb(0 18 33 / 62%);
+                        border-radius: 50%;
+                        margin-right: 16px;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        svg{
+                            width:25px;
+                            height:25px;
+                            filter: drop-shadow(0 0 8px var(--primary-color));
+                            path{
+                                color:var(--primary-color);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

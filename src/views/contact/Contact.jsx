@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Cursor from '../../components/cursor/Cursor';
 import Title from '../../components/title/Title';
+import Github from '../../components/contact/Github';
+import Linkedin from '../../components/contact/Linkedin';
+import Mail from '../../components/contact/Mail';
 import './contact.scss';
 
 const subjects = [
@@ -57,7 +60,18 @@ function Contact() {
                     </div>
                 </form>
                 <div className='contact_container_details'>
-                    <h2>Hey</h2>
+                    <div className='contact_container_details_text'>
+                        <h2>Prenons contact</h2>
+                        <p>Partagez vos idées passionnantes ou posez des questions stimulantes via le formulaire de contact. Je serai ravi de vous répondre dans un délai de 24 heures.</p>
+                    </div>
+                    <div className='contact_container_details_reseaux'>
+                        <h3>Mes réseaux :</h3>
+                        <div className='contact_container_details_reseaux_link'>
+                            <a href='mailto:nolan@3ntf.fr' target='blanc'><Mail/></a>
+                            <a href='https://www.linkedin.com/in/nolan-ramos/' target='blanc'><Linkedin/></a>
+                            <a href='https://github.com/Nolan-ramos' target='blanc'><Github/></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Cursor />
