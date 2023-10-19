@@ -1,6 +1,6 @@
 .experience{
     box-sizing: border-box;
-    @media screen and (min-width: 1900px) {
+    @media screen and (min-width: 1600px) {
         display: flex;
         align-items:center ;
         flex-direction: column;
@@ -12,9 +12,9 @@
         height:600px;
         border-radius: 20px;
         overflow: hidden;
-        @media screen and (min-width: 1900px) {
-            width:70%;
-            height:75vh;
+        @media screen and (min-width: 1600px) {
+            width:65%;
+            height:70vh;
         }
         @media screen and (max-width: 1200px) {
             margin: 96px;
@@ -56,7 +56,7 @@
             padding:24px;
             opacity: 1;
             overflow: hidden;
-            @media screen and (min-width: 1900px) {
+            @media screen and (min-width: 1600px) {
                 font-size: 20px;
             }
             @media screen and (max-width: 767px) {
@@ -119,10 +119,10 @@
             border-bottom-right-radius: 20px;
             overflow-y: scroll;
             padding:64px 48px 48px 48px;
-            @media screen and (min-width: 1900px) {
+            @media screen and (min-width: 1600px) {
                 padding:64px 48px 48px 48px;
             }
-            @media screen and (max-width: 1250px) {
+            @media screen and (max-width: 1200px) {
                 padding:64px 24px 48px 24px;
             }
             @media screen and (max-width: 1023px) {
@@ -206,8 +206,8 @@
                     display: none;
                 }
             }
-            @media screen and (min-width: 1900px) {
-                font-size:20px;
+            @media screen and (min-width: 1600px) {
+                font-size:18px;
             }
         }
     }

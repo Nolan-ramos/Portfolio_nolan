@@ -1,6 +1,6 @@
 .contact {
     box-sizing: border-box;
-    @media screen and (min-width: 1900px) {
+    @media screen and (min-width: 1600px) {
         display: flex;
         align-items:center ;
         flex-direction: column;
@@ -12,9 +12,9 @@
         height:600px;
         border-radius: 20px;
         background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
-        @media screen and (min-width: 1900px) {
-            width:70%;
-            height:75vh;
+        @media screen and (min-width: 1600px) {
+            width:65%;
+            height:70vh;
         }
         @media screen and (max-width: 1200px) {
             margin: 96px;
@@ -32,26 +32,80 @@
             margin: 96px 12px;
         }
         &_form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
             width:60%;
             background-color: rgb(0 18 33 / 62%);
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
             padding:48px;
+            @media screen and (min-width: 1600px) {
+                padding:48px 64px;
+            }
+            @media screen and (max-width: 1023px) {
+                padding:24px;
+            }
             @media screen and (max-width: 767px) {
                 width:100%;
                 order: 1;
                 border-radius: 20px;
             }
+            &_input{
+                margin-bottom: 48px;
+                input{
+                    width:100%;
+                    padding:12px 16px;
+                    &:first-child{
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+            &_textarea{
+                margin-bottom: 48px;
+                textarea{
+                    width:100%;
+                    height:120px;
+                    padding:12px 16px;
+                }
+            }
             &_checkbox {
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 16px;
+                column-gap: 16px;
+                margin-bottom: 48px;
                 &_button{
-                    background: red;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgb(46 136 148 / 18%);
+                    width:calc(100%/3 - 11px);
+                    padding:12px;
                 }
                 .checked{
-                    background: green;
+                    background-color: #004c01;
+                    border: 1px solid var(--primary-color);
                 }
-                input[type="checkbox"]{
-                    appearance: none;
+                input{
+                    display: none;
                 }
+            }
+            &_submit{
+                display: flex;
+                justify-content: center;
+                button{
+                    background-color: rgb(46 136 148 / 18%);
+                    padding:12px 16px;
+                }
+            }
+            input,
+            textarea,
+            &_checkbox_button,
+            &_submit button{
+                border: 1px solid #206d78;
+                box-shadow: #206d78 0px 0px 6px 0px;
+                border-radius: 4px;
             }
         }
         &_details{

@@ -31,11 +31,8 @@ function Contact() {
                 <form className='contact_container_form' name="contact" method="post" data-netlify="true" onSubmit="submit">
                     <input type="hidden" name="form-name" value="contact" />
                     <div className='contact_container_form_input'>
-                        <input type="text" name="name" placeholder='name'/>
-                        <input type="email" name="email" placeholder='email'/>
-                    </div>
-                    <div className='contact_container_form_textarea'>
-                        <textarea name="message" placeholder='message'></textarea>
+                        <input type="text" name="name" placeholder='_name'/>
+                        <input type="email" name="email" placeholder='_email'/>
                     </div>
                     <div className='contact_container_form_checkbox'>
                         {subjects.map((subject, index) => (
@@ -52,7 +49,12 @@ function Contact() {
                             </label>
                         ))}
                     </div>
-                    <button type="submit">Envoyer</button>
+                    <div className='contact_container_form_textarea'>
+                        <textarea name="message" placeholder='_message' cols='30' rows='10'></textarea>
+                    </div>
+                    <div className='contact_container_form_submit'>
+                        <button type="submit">Envoyer</button>
+                    </div>
                 </form>
                 <div className='contact_container_details'>
                     <h2>Hey</h2>
