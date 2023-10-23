@@ -103,9 +103,9 @@ function Contact() {
                     <div className='contact_container_details_reseaux'>
                         <h3>Mes réseaux :</h3>
                         <div className='contact_container_details_reseaux_link'>
-                            <a href='mailto:nolan@3ntf.fr' target='blanc'><Mail/></a>
-                            <a href='https://www.linkedin.com/in/nolan-ramos/' target='blanc'><Linkedin/></a>
-                            <a href='https://github.com/Nolan-ramos' target='blanc'><Github/></a>
+                            <a href='mailto:nolan@3ntf.fr' target='_blank'><Mail/></a>
+                            <a href='https://www.linkedin.com/in/nolan-ramos/' target='_blank'><Linkedin/></a>
+                            <a href='https://github.com/Nolan-ramos' target='_blank'><Github/></a>
                         </div>
                     </div>
                 </div>
