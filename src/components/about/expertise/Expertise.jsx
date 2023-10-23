@@ -1,5 +1,3 @@
-// Import statements
-
 import React, { useEffect, useRef } from 'react';
 import { Tilt } from 'react-tilt';
 import expertiseData from './expertise.json';
@@ -62,15 +60,18 @@ function Expertise() {
     <div className="expertise">
       {expertiseData.map((item, index) => {
         const SVGComponent = svgComponents[item.svgComponent];
-  
+
+        const isMobile = window.innerWidth < 768;
+
         return (
-            <div
-              className="expertise_container cursor_change"
-              ref={(el) => (containerRefs.current[index] = el)}
-              key={index}
-            >
+          <div
+            className="expertise_container cursor_change"
+            ref={(el) => (containerRefs.current[index] = el)}
+            key={index}
+          >
+            {!isMobile && (
               <Tilt className="Tilt" options={{ max: 25, scale: 1 }}>
-                <div className='expertise_container_background'>
+                <div className="expertise_container_background">
                   <div className="expertise_container_title">
                     <SVGComponent />
                     <h3>{item.titre}</h3>
@@ -80,12 +81,23 @@ function Expertise() {
                   </div>
                 </div>
               </Tilt>
-            </div>
+            )}
+            {isMobile && (
+              <div className="expertise_container_background">
+                <div className="expertise_container_title">
+                  <SVGComponent />
+                  <h3>{item.titre}</h3>
+                </div>
+                <div className="expertise_container_content">
+                  <p>{item.content}</p>
+                </div>
+              </div>
+            )}
+          </div>
         );
       })}
     </div>
   );
-  
 }
 
 export default Expertise;
