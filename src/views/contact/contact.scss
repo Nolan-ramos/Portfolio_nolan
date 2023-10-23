@@ -116,6 +116,15 @@
                 border: 1px solid #206d78;
                 box-shadow: #206d78 0px 0px 6px 0px;
                 border-radius: 4px;
+                transition: 0.3s ease-in-out;
+            }
+            .valid{
+                border: 1px solid var(--primary-color);
+                box-shadow: var(--primary-color) 0px 0px 6px 0px;
+            }
+            .invalid{
+                border: 1px solid red;
+                box-shadow: red 0px 0px 6px 0px;
             }
         }
         &_details{

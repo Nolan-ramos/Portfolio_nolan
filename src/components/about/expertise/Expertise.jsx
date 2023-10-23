@@ -1,35 +1,18 @@
 import './expertise.scss';
-import expertiseData from './expertise.json';
-import Backend from './svg/Backend';
 import Frontend from './svg/Frontend';
-import DesignUi from './svg/DesignUi';
-import DesignUx from './svg/DesignUx';
 
 function Expertise() {
-  const svgComponents = {
-    Backend,
-    Frontend,
-    DesignUi,
-    DesignUx,
-  };
-
   return (
-    <div className="expertise">
-      {expertiseData.map((item, index) => {
-        const SVGComponent = svgComponents[item.svgComponent];
-
-        return (
-          <div className="expertise_container" key={index}>
-            <div className="expertise_container_title">
-              <SVGComponent />
-              <h3>{item.titre}</h3>
-            </div>
-            <div className="expertise_container_content">
-              <p>{item.content}</p>
-            </div>
+      <div className="expertise">
+        <div className="expertise_container">
+          <div className="expertise_container_title">
+            <Frontend />
+            <h3>Développement Front</h3>
           </div>
-        );
-      })}
+          <div className="expertise_container_content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus metus id augue convallis, ac tincidunt orci bibendum. Phasellus eget felis quis ligula varius hendrerit. Integer ultricies hendrerit enim, ut tristique risus tincidunt nec. </p>
+          </div>
+        </div>
     </div>
   );
 }

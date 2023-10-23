@@ -1,9 +1,9 @@
 import Code from '../../components/about/code/Code';
-import Skills from '../../components/about/skills/Skills';
 import Expertise from '../../components/about/expertise/Expertise';
+import Skills from '../../components/about/skills/Skills';
 import Cursor from '../../components/cursor/Cursor';
-import Title from '../../components/title/Title';
 import RowRight from '../../components/experience/RowRight';
+import Title from '../../components/title/Title';
 import './about.scss';
 
 function About() {
@@ -23,9 +23,9 @@ function About() {
             <Title title="Mes_compétences" />
             <Skills/>
             <Cursor />
-            <div className="about_to_top" onClick={scrollToTop}>
+            <a className="about_to_top" onClick={scrollToTop}>
                 <RowRight />
-            </div>
+            </a>
         </div>
     );
 }

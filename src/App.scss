@@ -81,19 +81,19 @@ input[type=search] {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: 0px solid rgb(67 217 173 / 26%);
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: none;
+select:-webkit-autofill {
+  border: 1px solid #206d78;
+  -webkit-text-fill-color: white !important;
+  box-shadow: #206d78 0px 0px 6px 0px;
   transition: background-color 5000s ease-in-out 0s;
   caret-color: white;
+}
+
+input:-internal-autofill-selected {
+  background: red !important;
+  color: red !important;
 }
 
 /*
