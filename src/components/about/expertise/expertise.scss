@@ -5,11 +5,45 @@
     flex-direction: column;
     flex-wrap: wrap;
     row-gap: 400px;
-    margin: 96px 192px 304px 192px;
+    margin: 96px 192px 400px 192px;
+    @media screen and (max-width: 1200px) {
+        margin: 96px 96px 400px 96px;
+    }
+    @media screen and (max-width: 1023px) {
+        margin: 96px 48px 400px 48px;
+    }
+    @media screen and (max-width: 767px) {
+        margin: 96px 24px 400px 24px;
+    }
+    @media screen and (max-width: 340px) {
+        margin: 96px 12px 400px 12px;
+    }
     &_container{
-        background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
-        border-radius: 20px;
         width:450px;
+        transition: 0.5s ease-in-out;
+        opacity:0;
+        transform: translateX(0px) translateY(0px) perspective(750px) rotateY(0deg) scale(1) rotateX(0deg);
+        @media screen and (max-width: 480px) {
+            width:calc(100%);
+        }
+        &_left{
+            transform: translateX(calc(100vw - (100vw/2) - (100%))) translateY(100px) perspective(800px)rotateY(-25deg) scale(1) rotateX(10deg);
+            opacity:1;
+            @media screen and (max-width: 767px) {
+                transform: translateX(0) translateY(100px) perspective(800px)rotateY(-25deg) scale(1) rotateX(10deg);
+            }
+        }
+        &_right{
+            transform: translateX(calc(-100vw + (100vw/2) + (100%))) translateY(100px) perspective(800px) rotateY(25deg) scale(1) rotateX(10deg);
+            opacity:1;
+            @media screen and (max-width: 767px) {
+                transform: translateX(0) translateY(100px) perspective(800px)rotateY(25deg) scale(1) rotateX(10deg);
+            }
+        }
+        &_background{
+            background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
+            border-radius: 20px;
+        }
         &_title{
             display: flex;
             align-items: center;
@@ -23,6 +57,12 @@
                 font-size: 24px;
                 font-weight: 500;
                 text-shadow: 0px 0px 2px #206d78;
+                @media screen and (max-width: 480px) {
+                    font-size: 20px;
+                }
+                @media screen and (max-width: 320px) {
+                    font-size: 20px;
+                }
             }
             svg{
                 margin-right: 12px;
@@ -37,9 +77,21 @@
         }
         &_content{
             padding:24px;
+            @media screen and (max-width: 480px) {
+                padding:16px;
+            }
+            @media screen and (max-width: 320px) {
+                padding:12px;
+            }
             p{
                 font-size: 20px;
                 line-height: 1.5;
+                @media screen and (max-width: 480px) {
+                    font-size: 18px;
+                }
+                @media screen and (max-width: 320px) {
+                    font-size: 16px;
+                }
             }
         }
     }

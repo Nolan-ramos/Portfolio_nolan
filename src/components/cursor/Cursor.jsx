@@ -21,7 +21,7 @@ function Cursor() {
     };
     
     useEffect(() => {
-        const elements = document.querySelectorAll('a, button, input, textarea, label');
+        const elements = document.querySelectorAll('a, button, input, textarea, label, .cursor_change');
         elements.forEach((element) => {
             element.addEventListener('mouseenter', handleMouseEnter);
             element.addEventListener('mouseleave', handleMouseLeave);
