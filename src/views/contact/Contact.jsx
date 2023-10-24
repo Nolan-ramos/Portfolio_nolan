@@ -19,13 +19,15 @@ function Contact() {
     const [selectedSubjects, setSelectedSubjects] = useState([]);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
     const [nameValid, setNameValid] = useState(true);
     const [emailValid, setEmailValid] = useState(true);
+    const [messageValid, setMessageValid] = useState(true);
 
     const handleCheckboxChange = (e) => {
         const { value } = e.target;
         if (selectedSubjects.includes(value)) {
-            setSelectedSubjects(selectedSubjects.filter(subject => subject !== value));
+            setSelectedSubjects(selectedSubjects.filter((subject) => subject !== value));
         } else {
             setSelectedSubjects([...selectedSubjects, value]);
         }
@@ -47,31 +49,53 @@ function Contact() {
         setEmailValid(re.test(e.target.value));
     };
 
+    const handleMessageChange = (e) => {
+        setMessage(e.target.value);
+        if (e.target.value.length >= 5) {
+            setMessageValid(true);
+        } else {
+            setMessageValid(false);
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevents the default form submission behavior
+        // Check if all required fields are valid before submitting
+        if (nameValid && emailValid && messageValid) {
+            // Form submission logic goes here
+            console.log("Form submitted!");
+            // You can use the 'fetch' API or any other library to send the form data to the server
+        } else {
+            // Display an error message or handle invalid fields here
+            console.log("Please fill out all required fields correctly.");
+        }
+    };
+
     return (
         <div className='contact fade-in'>
             <Title title="Contact" />
             <div className='contact_container'>
-                <form className='contact_container_form' name="contact" method="post" data-netlify="true" onSubmit="submit">
+                <form className='contact_container_form' name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div className='contact_container_form_input'>
-                    <input
-                        type="text"
-                        name="name"
-                        autocomplete="new-password"
-                        placeholder='_name'
-                        value={name}
-                        onChange={handleNameChange}
-                        className={name.length > 0 ? (nameValid ? 'valid' : 'invalid') : ''}
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        autocomplete="new-password"
-                        placeholder='_email'
-                        value={email}
-                        onChange={handleEmailChange}
-                        className={email.length > 0 ? (emailValid ? 'valid' : 'invalid') : ''}
-                    />
+                        <input
+                            type="text"
+                            name="name"
+                            autoComplete="new-password"
+                            placeholder='_name'
+                            value={name}
+                            onChange={handleNameChange}
+                            className={name.length > 0 ? (nameValid ? 'valid' : 'invalid') : ''}
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            autoComplete="new-password"
+                            placeholder='_email'
+                            value={email}
+                            onChange={handleEmailChange}
+                            className={email.length > 0 ? (emailValid ? 'valid' : 'invalid') : ''}
+                        />
                     </div>
                     <div className='contact_container_form_checkbox'>
                         {subjects.map((subject, index) => (
@@ -89,7 +113,15 @@ function Contact() {
                         ))}
                     </div>
                     <div className='contact_container_form_textarea'>
-                        <textarea name="message" placeholder='_message' cols='30' rows='10'></textarea>
+                        <textarea
+                            name="message"
+                            placeholder='_message'
+                            cols='30'
+                            rows='10'
+                            value={message}
+                            onChange={handleMessageChange}
+                            className={message.length > 0 ? (messageValid ? 'valid' : 'invalid') : ''}
+                        ></textarea>
                     </div>
                     <div className='contact_container_form_submit'>
                         <button type="submit">Envoyer</button>
@@ -103,9 +135,9 @@ function Contact() {
                     <div className='contact_container_details_reseaux'>
                         <h3>Mes réseaux :</h3>
                         <div className='contact_container_details_reseaux_link'>
-                            <a href='mailto:nolan@3ntf.fr' target='_blank'><Mail/></a>
-                            <a href='https://www.linkedin.com/in/nolan-ramos/' target='_blank'><Linkedin/></a>
-                            <a href='https://github.com/Nolan-ramos' target='_blank'><Github/></a>
+                            <a href='mailto:nolan@3ntf.fr' target='_blank' rel="noopener noreferrer"><Mail /></a>
+                            <a href='https://www.linkedin.com/in/nolan-ramos/' target='_blank' rel="noopener noreferrer"><Linkedin /></a>
+                            <a href='https://github.com/Nolan-ramos' target='_blank' rel="noopener noreferrer"><Github /></a>
                         </div>
                     </div>
                 </div>
