@@ -59,14 +59,11 @@ function Contact() {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevents the default form submission behavior
         // Check if all required fields are valid before submitting
         if (nameValid && emailValid && messageValid) {
-            // Form submission logic goes here
-            console.log("Form submitted!");
-            // You can use the 'fetch' API or any other library to send the form data to the server
+            // Allow form submission by default behavior
         } else {
-            // Display an error message or handle invalid fields here
+            e.preventDefault(); // Prevents the default form submission behavior
             console.log("Please fill out all required fields correctly.");
         }
     };
