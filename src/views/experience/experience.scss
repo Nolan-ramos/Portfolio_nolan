@@ -50,9 +50,12 @@
         height:100%;
         overflow-x:hidden;
         background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
+        @media screen and (max-width: 767px) {
+            background: none;
+        }
         &_accordeon{
             width: 400px;
-            background-color: rgb(0 18 33 / 62%);
+            background-color: rgba(4, 37, 49, 0.77);
             border-bottom-left-radius: 20px;
             padding:24px;
             opacity: 1;
@@ -135,6 +138,7 @@
                 right:calc(-100% - 100px);
                 transition: 0.3s ease-in-out;
                 height:100%;
+                background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
             }
             @media screen and (max-width: 340px) {
                 padding:64px 24px 48px 24px;

@@ -41,12 +41,12 @@ function Title(props) {
     }, [props.title, isDeleting, currentIndex, speed]);
 
     return (
-        <h1>
+        <div className='title'>
             <span>{"{--"}</span>
             <h1>{text}</h1>
             <p>|</p>
             <span>{"--}"}</span>
-        </h1>
+        </div>
     );
 }
 

@@ -15,7 +15,7 @@ function About() {
     };
 
     return (
-        <div className='about fade-in'>
+        <div className='about fade-in-component'>
             <Title title="A_propos" />
             <Code/>
             <Title title="Mes_expertises" />

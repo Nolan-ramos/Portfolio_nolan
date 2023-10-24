@@ -19,16 +19,16 @@ function Portfolio() {
     };
 
     return (
-        <div className='portfolio fade-in'>
+        <div className='portfolio fade-in-component'>
         <Title title="Portfolio" />
         <div className='portfolio_container'>
             <div className='portfolio_container_header'>
-                <MacButtons />
+                <MacButtons closeUrl="/"/>
                 <span className='portfolio_container_header_title'>_portfolio.app</span>
             </div>
             <div className='portfolio_container_content'>
                 <div className="portfolio_container_content_languages">
-                    <div className='portfolio_container_content_languages_contenu'> 
+                    <div>
                         {Object.keys(portfolioData.languages).map((language) => (
                             <div key={language} onClick={() => handleLanguageClick(language)}>
                                 {language}
@@ -36,7 +36,7 @@ function Portfolio() {
                         ))}
                     </div>
                 </div>
-                <div className='portfolio_container_content_separateur'></div>
+                <div className="portfolio_container_content_separateur"></div>
                 <div className="portfolio_container_content_projets">
                 {selectedLanguage && (
                     <div className="portfolio_container_content_projets_contenu">
@@ -48,7 +48,7 @@ function Portfolio() {
                     </div>
                 )}
                 </div>
-                <div className='portfolio_container_content_separateur'></div>
+                <div className="portfolio_container_content_separateur"></div>
                 <div className="portfolio_container_content_details">
                 {selectedProject && (
                     <div className='portfolio_container_content_details_contenu'>

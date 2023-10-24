@@ -103,11 +103,11 @@ function Experience() {
     
 
     return (
-        <div className='experience fade-in'>
+        <div className='experience fade-in-component'>
             <Title title="Mes_experiences" />
             <div className='experience_container'>
                 <div className='experience_header'>
-                    <MacButtons />
+                    <MacButtons closeUrl="/"/>
                     <span className='experience_header_title'>_experience.app</span>
                 </div>
                 <div className='experience_content'>

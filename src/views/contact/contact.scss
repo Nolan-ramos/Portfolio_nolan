@@ -7,11 +7,9 @@
     }
     &_container{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         margin: 96px 192px 0 192px;
         height:600px;
-        border-radius: 20px;
-        background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
         // backdrop-filter: blur(20px);
         @media screen and (min-width: 1600px) {
             width:65%;
@@ -25,12 +23,33 @@
         }
         @media screen and (max-width: 767px) {
             margin: 96px 24px 0 24px;
-            flex-direction: column;
             height:auto;
-            order: 2;
         }
         @media screen and (max-width: 340px) {
             margin: 96px 12px 0 12px;
+        }
+        &_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:100%;
+            background: #001321;
+            padding:12px 24px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            &_title{
+                color:rgba(76, 76, 76, 0.76);
+            }
+        }
+        &_content{
+            display: flex;
+            background: linear-gradient(45deg, rgb(67 217 173 / 26%) 0%, rgb(0 161 177 / 26%) 100%);
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            @media screen and (max-width: 767px) {
+                flex-direction: column;
+                order: 2;
+            }
         }
         &_form {
             display: flex;
@@ -38,9 +57,8 @@
             flex-direction: column;
             width:55%;
             background-color: rgb(0 18 33 / 62%);
-            border-top-left-radius: 12px;
-            border-bottom-left-radius: 12px;
             padding:48px;
+            border-bottom-left-radius: 20px;
             @media screen and (min-width: 1600px) {
                 padding:48px 64px;
             }
@@ -143,8 +161,7 @@
             flex-direction: column;
             width:45%;
             height:100%;
-            border-top-right-radius: 12px;
-            border-bottom-right-radius: 12px;
+            border-bottom-right-radius: 20px;
             padding:48px;
             @media screen and (min-width: 1600px) {
                 padding:64px;

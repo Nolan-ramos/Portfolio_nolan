@@ -4,7 +4,7 @@ import './header.scss';
 function Header() {
     return (
         <div className='header'>
-            <MacButtons />
+            <MacButtons closeUrl="https://3ntf.fr/"/>
             <span className='header_title'>nolan_ramos.app</span>
             <div className='header_fake_button_right'></div>
         </div>
