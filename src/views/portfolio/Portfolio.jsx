@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Cursor from '../../components/cursor/Cursor';
 import MacButtons from '../../components/mac_buttons/mac_buttons';
 import Close from '../../components/portfolio/Close.jsx';
@@ -9,20 +8,14 @@ import Title from '../../components/title/Title';
 import './portfolio.scss';
 import portfolioData from './portfolioData.json';
 
-// import Css from '../../components/portfolio/Css.jsx';
-// import Figma from '../../components/portfolio/Figma.jsx';
-// import Javascript from '../../components/portfolio/Javascript.jsx';
-// import Vuejs from '../../components/portfolio/Vuejs.jsx';
-
 import fake3 from './img/fake3.jpg';
 import fake4 from './img/fake4.jpg';
-import fakeSlide from './img/fake_slide.jpg';
-import fakeSlidee from './img/fake_slidee.jpg';
+
+const images = { fake3, fake4 };
 
 function Portfolio() {
     const [selectedLanguage, setSelectedLanguage] = useState(null);
     const [selectedProject, setSelectedProject] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleLanguageClick = (language) => {
         setSelectedLanguage(language);
@@ -32,17 +25,6 @@ function Portfolio() {
     const handleProjectClick = (project) => {
         setSelectedProject(project);
     };
-
-    useEffect(() => {
-        if (selectedLanguage && selectedProject && portfolioData.languages[selectedLanguage] && portfolioData.languages[selectedLanguage][selectedProject]) {
-            const interval = setInterval(() => {
-                setCurrentIndex((prevIndex) =>
-                    prevIndex === portfolioData.languages[selectedLanguage][selectedProject].images.length - 1 ? 0 : prevIndex + 1
-                );
-            }, 2000);
-            return () => clearInterval(interval);
-        }
-    }, [selectedLanguage, selectedProject]);
 
     return (
         <div className='portfolio fade-in-component'>
@@ -60,11 +42,11 @@ function Portfolio() {
                                     key={language}
                                     onClick={() => handleLanguageClick(language)}
                                     className={`${selectedLanguage === language ? 'language_active cursor_change' : 'cursor_change'}`}
-                                    >
+                                >
                                     {selectedLanguage === language ? (
-                                        <span class="open"><Open /></span>
+                                        <span className="open"><Open /></span>
                                     ) : (
-                                        <span class="close"><Close /></span>
+                                        <span className="close"><Close /></span>
                                     )}
                                     <p>{language}</p>
                                 </div>
@@ -82,13 +64,8 @@ function Portfolio() {
                                         className={selectedProject === project ? 'projet_active' : ''}
                                     >
                                         <Folder/>
-                                        {/* {selectedLanguage === "JavaScript" && <Javascript />}
-                                        {selectedLanguage === "Figma" && <Figma />}
-                                        {selectedLanguage === "VueJs" && <Vuejs />}
-                                        {selectedLanguage === "CSS" && <Css />} */}
                                         {project}
                                     </div>
-                                    
                                 ))}
                             </div>
                         )}
@@ -97,26 +74,13 @@ function Portfolio() {
                     <div className='portfolio_container_content_details'>
                         {selectedProject && (
                             <div className='portfolio_container_content_details_contenu'>
-                                <div className='portfolio_container_content_details_contenu_slide'>
-                                    {portfolioData.languages[selectedLanguage] && portfolioData.languages[selectedLanguage][selectedProject] && (
-                                        <img
-                                            className={`portfolio_container_content_details_contenu_slide_image ${currentIndex === 0 ? 'slide-enter' : 'slide-exit'}`}
-                                            key={currentIndex}
-                                            src={
-                                                portfolioData.languages[selectedLanguage][selectedProject].images[currentIndex] === 'fake_slide.jpg'
-                                                    ? fakeSlide
-                                                    : portfolioData.languages[selectedLanguage][selectedProject].images[currentIndex] === 'fake_slidee.jpg'
-                                                    ? fakeSlidee
-                                                    : portfolioData.languages[selectedLanguage][selectedProject].images[currentIndex] === 'fake3.jpg'
-                                                    ? fake3
-                                                    : fake4
-                                            }
-                                            alt={`project-${selectedProject}-image-${currentIndex}`}
-                                        />
-                                    )}
-                                </div>
-                                <div>Text: {portfolioData.languages[selectedLanguage][selectedProject].text}</div>
-                                <div>Title: {portfolioData.languages[selectedLanguage][selectedProject].title}</div>
+                                <img
+                                    className="portfolio_container_content_details_contenu_image"
+                                    src={images[portfolioData.languages[selectedLanguage][selectedProject].images]}
+                                    alt={`project-${selectedProject}`}
+                                />
+                                <h3>{portfolioData.languages[selectedLanguage][selectedProject].text}</h3>
+                                <p>{portfolioData.languages[selectedLanguage][selectedProject].title}</p>
                             </div>
                         )}
                     </div>
