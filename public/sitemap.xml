@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://nolan.3ntf.fr/</loc>
+        <lastmod>2023-10-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://nolan.3ntf.fr/portfolio</loc>
+        <lastmod>2023-10-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nolan.3ntf.fr/experience</loc>
+        <lastmod>2023-10-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nolan.3ntf.fr/contact</loc>
+        <lastmod>2023-10-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.9</priority>
+    </url>
+</urlset>
