@@ -80,10 +80,11 @@
                 margin-right: 12px;
                 height:32px;
                 width:32px;
-                filter: drop-shadow(0px 0px 2px #206d78);
+                // filter: drop-shadow(0px 0px 2px #206d78);
                 path{
                     stroke: #206d78;
                     fill: transparent;
+                    border-width: 1px;
                 }
             }
         }

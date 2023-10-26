@@ -1,4 +1,9 @@
 .portfolio{
+    @media screen and (min-width: 1600px) {
+        display: flex;
+        align-items:center ;
+        flex-direction: column;
+    }
     &_container{
         display: flex;
         flex-direction: column;
@@ -19,6 +24,8 @@
         }
         @media screen and (max-width: 767px) {
             margin: 96px 24px 0 24px;
+            min-height: 600px;
+            height:auto;
         }
         @media screen and (max-width: 340px) {
             margin: 96px 12px 0 12px;
@@ -39,33 +46,150 @@
         &_content{
             display: flex;
             height:100%;
+            @media screen and (max-width: 767px) {
+                flex-direction: column;
+                height:auto;
+                padding:48px;
+            }
+            @media screen and (max-width: 320px) {
+                padding:24px;
+            }
             &_languages{
-                width:200px;
+                width:225px;
                 background-color: rgb(4 37 49 / 77%);
                 padding:24px;
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
                 &_contenu{
-                    
+                    .language_active{
+                        color: var(--primary-color);
+                        span{
+                            border-color: var(--primary-color);
+                            box-shadow: var(--primary-color) 0 0 4px 0px;
+                        }
+                    }
+                    & > div{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 16px;
+                        transition: 0.3s ease-in-out;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: #206d78 0 0 4px 0px;
+                            border: 2px solid #206d78;
+                            border-radius: 50px;
+                            height:30px;
+                            width:30px;
+                            margin-right: 8px;
+                            transition: 0.3s ease-in-out;
+                            svg{
+                                filter: drop-shadow(0 0 12px #206d78);
+                                path{
+                                    stroke-width: 3px;
+                                    stroke: #206d78;
+                                }
+                            }
+                            .open svg{
+                                display: block;
+                                width:10px;
+                                height:10px;
+                            }
+                        }
+                    }
                 }
             }
             &_projets{
                 flex-basis: 45%;
-                padding:24px;
+                padding:8px 48px 24px 48px;
+                @media screen and (max-width: 767px) {
+                    padding:0;
+                    flex-basis: auto;
+                }
                 &_contenu{
-                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width:100%;
+                    @media screen and (max-width: 767px) {
+                        flex-basis: auto;
+                        overflow-x: auto;
+                        width:100%;
+                        height:100%;
+                        padding-bottom: 48px;
+                    }
+                    .projet_active svg:first-child path{
+                        stroke: var(--primary-color);
+                    }
+                    & > div{
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: calc(100%/3 - 16px);
+                        @media screen and (min-width: 1600px) {
+                            width: calc(100%/4);
+                        }
+                        @media screen and (max-width: 767px) {
+                            width:150px;
+                            margin-right: 24px;
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                        @media screen and (max-width: 480px) {
+                            width: 75px;
+                        }
+                        svg{
+                            display: block;
+                            height:auto;
+                            width:100%;
+                            @media screen and (max-width: 767px) {
+                                width:150px;
+                            }
+                            @media screen and (max-width: 480px) {
+                                width: 75px;
+                            }
+                            path{
+                                transition: 0.3s ease-in-out;
+                                fill: rgb(26 75 85 / 42%);
+                                stroke: rgb(26 75 85 / 78%);
+                                stroke-width: 5px;
+                            }
+                        }
+                    }
                 }
             }
             &_details{
                 flex-basis: 55%;
-                padding:24px;
+                padding:48px;
+                position: relative;
+                @media screen and (max-width: 767px) {
+                    flex-basis: auto;
+                    padding:0;
+                }
                 &_contenu{
-                    
+                    overflow-y: auto;
+                    &_slide {
+                        height: 250px;
+                        overflow: hidden;
+                        &_image {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
                 }
             }
             &_languages,
             &_projets,
             &_details{
                 height: 100%;
-                overflow-y: auto;
+                @media screen and (max-width: 767px) {
+                    height: auto;
+                }
                 &::-webkit-scrollbar {
                     width: 3px;
                 }
@@ -80,7 +204,22 @@
                 width: 2px;
                 background-color: #206d78;
                 box-shadow: #206d78 0px 0px 6px 0px;
+                @media screen and (max-width: 767px) {
+                    height:2px;
+                    width:100%;
+                    margin-bottom: 48px;
+                }
+                @media screen and (max-width: 320px) {
+                    margin-bottom: 24px;
+                }
             }
         }
     }
 }
+
+.separateur_resp{
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
