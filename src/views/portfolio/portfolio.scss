@@ -24,7 +24,7 @@
         }
         @media screen and (max-width: 767px) {
             margin: 96px 24px 0 24px;
-            min-height: 600px;
+            min-height:600px;
             height:auto;
         }
         @media screen and (max-width: 340px) {
@@ -44,15 +44,37 @@
             }
         }
         &_content{
+            position: relative;
             display: flex;
             height:100%;
             @media screen and (max-width: 767px) {
                 flex-direction: column;
                 height:auto;
-                padding:48px;
             }
-            @media screen and (max-width: 320px) {
-                padding:24px;
+            &_toggle_popup{
+                position: absolute;
+                top:22px;
+                left:43px;
+                z-index: 6;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                border-radius: 20px;
+                background-color: #236d78;
+                filter: drop-shadow(0 0 4px #236d78);
+                border: 1px solid transparent;
+                width: 40px;
+                height: 25px;
+                transition: 0.3s ease-in-out;
+                svg{
+                    path,circle{
+                        stroke: var(--primary-color);
+                    }
+                }
+                @media screen and (max-width: 767px) {
+                    display: flex;
+                }
             }
             &_languages{
                 width:250px;
@@ -62,7 +84,13 @@
                     padding:32px;
                 }
                 @media screen and (max-width: 767px) {
-                    display: none;
+                    padding:64px 48px 48px 48px;
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width:100%;
+                    z-index: 5;
+                    transition: 0.3s ease-in-out;
                 }
                 &_contenu{
                     .language_active{
@@ -107,11 +135,21 @@
             &_projets{
                 flex-basis: 45%;
                 padding:32px 48px;
-                @media screen and (max-width: 1600px) {
-                    padding:48px;
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width:3px;
+                }
+                &::-webkit-scrollbar-track{
+                    background: #011627;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: #09414b;
+                }
+                @media screen and (min-width: 1600px) {
+                    padding:32px 48px;
                 }
                 @media screen and (max-width: 1023px) {
-                    padding:32px;
+                    padding:24px 48px;
                 }
                 @media screen and (max-width: 767px) {
                     padding:0;
@@ -119,13 +157,17 @@
                 }
                 &_contenu{
                     display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 12px;
+                    row-gap: 12px;
                     align-items: center;
                     justify-content: space-between;
                     width:100%;
-                    overflow: hidden;
+                    height:auto;
+                    overflow-x: hidden;
+                    padding-bottom: 48px;
                     &::-webkit-scrollbar {
                         height:3px;
-                        width: 3px;
                     }
                     &::-webkit-scrollbar-track{
                         background: #011627;
@@ -134,11 +176,16 @@
                         background-color: #09414b;
                     }
                     @media screen and (max-width: 767px) {
+                        flex-wrap: nowrap;
                         flex-basis: auto;
                         overflow-x: auto;
+                        overflow-y: hidden;
                         width:100%;
                         height:100%;
-                        padding-bottom: 48px;
+                        padding: 48px 0 48px 48px;
+                    }
+                    @media screen and (max-width: 320px) {
+                        padding: 48px 0 24px 24px;
                     }
                     .projet_active svg:first-child path{
                         stroke: var(--primary-color);
@@ -149,28 +196,33 @@
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        width: calc(100%/3 - 16px);
+                        width: 75px;
                         @media screen and (min-width: 1600px) {
-                            width: calc(100%/4);
+                            width: 100px;
                         }
                         @media screen and (max-width: 767px) {
-                            width:150px;
-                            margin-right: 24px;
+                            width:100px;
                             &:last-child{
-                                margin-right: 0;
+                                margin-right: 48px;
                             }
                         }
-                        @media screen and (max-width: 480px) {
+                        @media screen and (max-width: 320px) {
                             width: 75px;
+                            &:last-child{
+                                margin-right: 24px;
+                            }
                         }
                         svg{
                             display: block;
                             height:auto;
-                            width:100%;
-                            @media screen and (max-width: 767px) {
-                                width:150px;
+                            width: 75px;
+                            @media screen and (min-width: 1600px) {
+                                width: 100px;
                             }
-                            @media screen and (max-width: 480px) {
+                            @media screen and (max-width: 767px) {
+                                width: 100px;
+                            }
+                            @media screen and (max-width: 320px) {
                                 width: 75px;
                             }
                             path{
@@ -180,6 +232,9 @@
                                 stroke-width: 5px;
                             }
                         }
+                        p{
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -187,6 +242,7 @@
                 flex-basis: 55%;
                 padding:48px;
                 position: relative;
+                overflow-y: auto;
                 &::-webkit-scrollbar {
                     width: 3px;
                 }
@@ -201,10 +257,17 @@
                 }
                 @media screen and (max-width: 767px) {
                     flex-basis: auto;
-                    padding:0;
+                    padding: 0 48px 48px 48px;
+                }
+                @media screen and (max-width: 320px) {
+                    padding: 0 24px 24px 24px;
                 }
                 &_contenu{
-                    overflow-y: auto;
+                    padding-bottom: 48px;
+                    @media screen and (max-width: 767px) {
+                        flex-basis: auto;
+                        padding-bottom: 0;
+                    }
                     &_image{
                         width:100%;
                     }
@@ -217,15 +280,6 @@
                         font-weight: 200;
                     }
                 }
-            }
-            &_languages,
-            &_projets,
-            &_details{
-                height: 100%;
-                @media screen and (max-width: 767px) {
-                    height: auto;
-                }
-                
             }
             &_separateur{
                 width: 2px;
