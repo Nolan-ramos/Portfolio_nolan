@@ -24,8 +24,6 @@
         }
         @media screen and (max-width: 767px) {
             margin: 96px 24px 0 24px;
-            min-height:600px;
-            height:auto;
         }
         @media screen and (max-width: 340px) {
             margin: 96px 12px 0 12px;
@@ -49,7 +47,7 @@
             height:100%;
             @media screen and (max-width: 767px) {
                 flex-direction: column;
-                height:auto;
+                height:100%;
             }
             &_toggle_popup{
                 position: absolute;
@@ -153,7 +151,8 @@
                 }
                 @media screen and (max-width: 767px) {
                     padding:0;
-                    flex-basis: auto;
+                    flex-basis: none;
+                    height:100%;
                 }
                 &_contenu{
                     display: flex;
@@ -256,17 +255,18 @@
                     padding:32px;
                 }
                 @media screen and (max-width: 767px) {
-                    flex-basis: auto;
-                    padding: 0 48px 48px 48px;
+                    padding: 48px;
+                    height:100%;
+                    flex-basis: none;
                 }
                 @media screen and (max-width: 320px) {
-                    padding: 0 24px 24px 24px;
+                    padding: 24px;
                 }
                 &_contenu{
                     padding-bottom: 48px;
+                    height:auto;
                     @media screen and (max-width: 767px) {
-                        flex-basis: auto;
-                        padding-bottom: 0;
+                        padding-bottom: 48px;
                     }
                     &_image{
                         width:100%;
@@ -288,10 +288,6 @@
                 @media screen and (max-width: 767px) {
                     height:2px;
                     width:100%;
-                    margin-bottom: 48px;
-                }
-                @media screen and (max-width: 320px) {
-                    margin-bottom: 24px;
                 }
             }
         }
