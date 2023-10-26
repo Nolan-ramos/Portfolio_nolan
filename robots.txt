@@ -1,2 +1,7 @@
 User-agent: *
-allow: /
+Disallow: /admin
+Disallow: /config
+Disallow: /scripts
+Disallow: /styles
+Disallow: /images
+Disallow: /public

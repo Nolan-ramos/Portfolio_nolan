@@ -88,7 +88,7 @@ function Portfolio() {
                             </div>
                         )}
                     </div>
-                    <div className='portfolio_container_content_separateur  separateur_appear'></div>
+                    <div className='portfolio_container_content_separateur  separateur_resp'></div>
                     <div className='portfolio_container_content_details'>
                         {selectedProject && (
                             <div className='portfolio_container_content_details_contenu'>
