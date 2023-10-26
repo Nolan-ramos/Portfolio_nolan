@@ -53,8 +53,7 @@ function Portfolio() {
                     >
                         <Toggle/>
                     </span>
-                    <div className='portfolio_container_content_languages' style={{ left: isLanguageOpen ? '0' : '-100%' }}>
-                        <div className='portfolio_container_content_languages_contenu'>
+                        <div className='portfolio_container_content_languages' style={{ left: selectedLanguage ? (isLanguageOpen ? '0' : '-100%') : '0%' }}>                        <div className='portfolio_container_content_languages_contenu'>
                             {Object.keys(portfolioData.languages).map((language) => (
                                 <div
                                     key={language}
