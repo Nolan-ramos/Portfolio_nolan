@@ -1,20 +1,20 @@
 [
     {
       "titre": "Développement Front",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus metus id augue convallis, ac tincidunt orci bibendum. Phasellus eget felis quis ligula varius hendrerit. Integer ultricies hendrerit enim, ut tristique risus tincidunt nec.",
+      "content": "Compétent développement en front-end, je crée des projets sur mesure, m'adaptant aux préférences technologiques des clients. Avec une maîtrise des derniers outils, je conçois des expériences web uniques, répondant à chaque besoin.",
       "svgComponent": "Frontend"
     },
     {
       "titre": "Développement Back",
-      "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      "content": "Habile en développement back-end, je crée des projets robustes sur mesure tout en étant apte à prendre en charge le front-end. Avec une expertise polyvalente, je réalise des solutions web complètes et performantes, répondant précisément aux exigences de chaque projet.",
       "svgComponent": "Backend"},
     {
       "titre": "Design UI",
-      "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "content": "Compétent en design UI, je crée des maquettes avant de prendre en charge le front-end. Avec une vision artistique et technique, je conçois des interfaces attrayantes qui s'intègrent parfaitement dans des expériences web dynamiques.",
       "svgComponent": "DesignUi"},
     {
       "titre": "Design UX",
-      "content": "Quisque eget fringilla mauris, ut hendrerit ipsum. Sed ac ipsum fermentum, viverra mauris sit amet, consequat dui. Sed id volutpat neque. Nullam id ex id magna sollicitudin sodales a id turpis. Vivamus vel orci id tellus faucibus accumsan.",
+      "content": "Spécialisé en design UX, j'optimise les expériences avant d'aborder l'UI. Je suis rapidement opérationnel pour prendre en charge la conception frontale, générant des solutions web intégrales et convaincantes.",
       "svgComponent": "DesignUx"
     }
   ]
